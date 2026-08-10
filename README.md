@@ -1,14 +1,18 @@
 # NSW Fuel Price Cycle Analysis
 
-A data pipeline that tracks petrol prices across New South Wales using the government's live FuelCheck API, then digs out the pricing cycle underneath the day-to-day noise — and forecasts where prices head next.
+A data pipeline that tracks petrol prices across New South Wales using the government's live FuelCheck API, then digs out the pricing cycle underneath the day-to-day noise, forecasts where prices head next, and serves it all through a live interactive dashboard.
+
+**Live dashboard:** https://nsw-fuel-price-analysis.streamlit.app
+
+An interactive Streamlit app where you can explore the price cycle and forecast by fuel type, with live metrics and a comparison across all fuel grades.
 
 ## Background
 
-I spent over a year working the counter at an Ampol service station. One thing you pick up fast is that fuel prices don't move randomly — they grind upward for a week or two, hit a peak, then drop hard almost overnight, and the whole thing starts over. This project was me checking whether the data actually backs up the pattern I'd been watching from behind the register.
+I spent over a year working the counter at an Ampol service station. One thing you pick up fast is that fuel prices don't move randomly. They grind upward for a week or two, hit a peak, then drop hard almost overnight, and the whole thing starts over. This project was me checking whether the data actually backs up the pattern I'd been watching from behind the register.
 
 ## What it does
 
-It collects a full snapshot of every NSW station's fuel prices on a schedule, stamps each snapshot with a time, and builds a price history over time. Once there's enough history, it cleans the data, charts the cycle across every fuel grade, and forecasts the next few days.
+It collects a full snapshot of every NSW station's fuel prices on a schedule, stamps each snapshot with a time, and builds a price history over time. Once there's enough history, it cleans the data, charts the cycle across every fuel grade, forecasts the next few days, and presents everything in a live dashboard anyone can open.
 
 Collection runs on its own. A cron job calls the collector every few hours, so the dataset keeps growing without me touching it.
 
@@ -16,12 +20,12 @@ Collection runs on its own. A cron job calls the collector every few hours, so t
 
 - Source: NSW Government FuelCheck API (OAuth2)
 - Coverage: ~3,300 stations statewide, 10 fuel types
-- Window: 23 July – 11 August 2026
-- ~317,000 timestamped price records after removing duplicate pulls
+- Window: 23 July onward (dataset keeps growing)
+- ~328,000 timestamped price records after removing duplicate pulls
 
 ## Findings
 
-Across the collection window the data showed a clean cycle — a steady climb to a peak around 5–6 August, then the start of a sharp fall.
+Across the collection window the data showed a clean cycle: a steady climb to a peak around 5-6 August, then the start of a sharp fall.
 
 A few things stood out:
 
@@ -51,7 +55,11 @@ The trend model beats the naive baseline by roughly 16%, on a deliberately short
 
 ![7-day forecast](forecast.png)
 
-**Honest limitation:** a linear trend can only project prices upward — it can't capture the crash that ends each cycle. Modelling the full cycle needs more accumulated data and a seasonal approach (e.g. Prophet or SARIMA), which is the next step as the dataset grows.
+**Honest limitation:** a linear trend can only project prices upward, so it can't capture the crash that ends each cycle. Modelling the full cycle needs more accumulated data and a seasonal approach (e.g. Prophet or SARIMA), which is the next step as the dataset grows.
+
+## The dashboard
+
+`dashboard.py` is a Streamlit app that turns the analysis into a live tool. It shows current metrics (latest price, cycle peak, stations tracked), lets you switch between fuel types, plots the cycle and 7-day forecast, reports how the forecast compares to the naive baseline, and charts all fuel grades side by side. It's deployed free on Streamlit Community Cloud and updates automatically whenever new code is pushed.
 
 ## How it works
 
@@ -60,13 +68,13 @@ The trend model beats the naive baseline by roughly 16%, on a deliberately short
 - Pulls current prices for every station
 - Appends each pull to `fuel_prices_history.csv` with a timestamp
 
-The analysis notebook loads that CSV, drops duplicate pulls, groups by day and fuel type, builds the charts above, and fits the forecast.
+The analysis notebook loads that CSV, drops duplicate pulls, groups by day and fuel type, builds the charts, and fits the forecast. The dashboard reads the same data and presents it interactively.
 
 API credentials are kept out of the code in a local `.env` file, which isn't committed.
 
 ## Stack
 
-Python, pandas, NumPy, matplotlib, requests, cron.
+Python, pandas, NumPy, matplotlib, Streamlit, requests, cron.
 
 ## Running it yourself
 
@@ -78,10 +86,11 @@ Python, pandas, NumPy, matplotlib, requests, cron.
    ```
 3. Install the dependencies:
    ```
-   pip install requests pandas numpy matplotlib python-dotenv
+   pip install requests pandas numpy matplotlib streamlit python-dotenv
    ```
 4. Run `python3 collect_prices.py` to collect a snapshot, or schedule it with cron to build history automatically.
+5. Run `streamlit run dashboard.py` to launch the dashboard locally.
 
 ## Next steps
 
-The current version documents the cycle and forecasts short-term with a validated baseline. The next stage is a seasonal model that can capture the full climb-and-crash cycle, plus a simple dashboard so the current prices and forecast are viewable at a glance.
+The current version documents the cycle, forecasts short-term with a validated baseline, and serves it all through a live dashboard. The next stage is a seasonal model (Prophet or SARIMA) that can capture the full climb-and-crash cycle, and saving station names and locations so the dashboard can map the cheapest fuel nearby.
