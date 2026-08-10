@@ -1,6 +1,6 @@
 # NSW Fuel Price Cycle Analysis
 
-A data pipeline that tracks petrol prices across New South Wales using the government's live FuelCheck API, then digs out the pricing cycle underneath the day-to-day noise.
+A data pipeline that tracks petrol prices across New South Wales using the government's live FuelCheck API, then digs out the pricing cycle underneath the day-to-day noise — and forecasts where prices head next.
 
 ## Background
 
@@ -8,7 +8,7 @@ I spent over a year working the counter at an Ampol service station. One thing y
 
 ## What it does
 
-It collects a full snapshot of every NSW station's fuel prices on a schedule, stamps each snapshot with a time, and builds a price history over time. Once there's enough history, it cleans the data and charts the cycle across every fuel grade.
+It collects a full snapshot of every NSW station's fuel prices on a schedule, stamps each snapshot with a time, and builds a price history over time. Once there's enough history, it cleans the data, charts the cycle across every fuel grade, and forecasts the next few days.
 
 Collection runs on its own. A cron job calls the collector every few hours, so the dataset keeps growing without me touching it.
 
@@ -34,6 +34,25 @@ A few things stood out:
 
 ![Price cycle by fuel type](price_by_fueltype.png)
 
+## Forecasting
+
+Beyond describing the cycle, I built a short-term price forecast and tested it properly rather than eyeballing it.
+
+**Method:** predict the next day's average price, then measure error against a naive baseline (tomorrow = today). Any model has to beat that baseline to be worth using.
+
+**Result:**
+
+| Model | MAE (c/L) | RMSE (c/L) |
+|-------|-----------|------------|
+| Naive baseline | 2.93 | 3.74 |
+| Linear trend | 2.45 | 2.97 |
+
+The trend model beats the naive baseline by roughly 16%, on a deliberately short dataset that keeps growing as collection continues.
+
+![7-day forecast](forecast.png)
+
+**Honest limitation:** a linear trend can only project prices upward — it can't capture the crash that ends each cycle. Modelling the full cycle needs more accumulated data and a seasonal approach (e.g. Prophet or SARIMA), which is the next step as the dataset grows.
+
 ## How it works
 
 **`collect_prices.py`**
@@ -41,13 +60,13 @@ A few things stood out:
 - Pulls current prices for every station
 - Appends each pull to `fuel_prices_history.csv` with a timestamp
 
-The analysis notebook loads that CSV, drops duplicate pulls, groups by day and fuel type, and builds the charts above.
+The analysis notebook loads that CSV, drops duplicate pulls, groups by day and fuel type, builds the charts above, and fits the forecast.
 
 API credentials are kept out of the code in a local `.env` file, which isn't committed.
 
 ## Stack
 
-Python, pandas, matplotlib, requests, cron.
+Python, pandas, NumPy, matplotlib, requests, cron.
 
 ## Running it yourself
 
@@ -59,10 +78,10 @@ Python, pandas, matplotlib, requests, cron.
    ```
 3. Install the dependencies:
    ```
-   pip install requests pandas matplotlib python-dotenv
+   pip install requests pandas numpy matplotlib python-dotenv
    ```
 4. Run `python3 collect_prices.py` to collect a snapshot, or schedule it with cron to build history automatically.
 
 ## Next steps
 
-This version documents the cycle. The next stage is forecasting — modelling when the next price spike is likely by region, and testing it properly against a naive baseline rather than eyeballing the chart.
+The current version documents the cycle and forecasts short-term with a validated baseline. The next stage is a seasonal model that can capture the full climb-and-crash cycle, plus a simple dashboard so the current prices and forecast are viewable at a glance.
