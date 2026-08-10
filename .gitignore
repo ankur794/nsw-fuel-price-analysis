@@ -1,0 +1,6 @@
+.env
+sample_response.json
+cron_log.txt
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
