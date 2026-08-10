@@ -65,15 +65,18 @@ st.subheader(f"{choice} price cycle and 7-day forecast")
 fig, ax = plt.subplots(figsize=(11, 5))
 ax.plot(daily['date'], daily['avg_price'], marker='o', label='Actual', color='#c0392b')
 ax.plot(future_dates, future_prices, 'o--', label='Forecast', color='#27ae60')
-ax.set_xlabel("Date"); ax.set_ylabel("Average price (cents/L)")
-ax.legend(); ax.grid(True, alpha=0.3)
-plt.xticks(rotation=45); plt.tight_layout()
+ax.set_xlabel("Date")
+ax.set_ylabel("Average price (cents/L)")
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.xticks(rotation=45)
+plt.tight_layout()
 st.pyplot(fig)
 
 st.info(
     f"**Model check:** the linear trend forecast has a mean error of "
     f"**{trend_mae:.2f} c/L**, beating a naive baseline of **{naive_mae:.2f} c/L**. "
-    f"A linear trend can't capture the crash that ends each cycle — a seasonal model is the next step."
+    f"A linear trend can't capture the crash that ends each cycle, so a seasonal model is the next step."
 )
 
 # ---- All fuel types comparison ----
@@ -83,9 +86,12 @@ for ft in ['E10', 'U91', 'P95', 'P98', 'DL']:
     if ft in fuel_types:
         s = df[df['fueltype'] == ft].groupby('day')['price'].mean()
         ax2.plot(s.index, s.values, marker='o', label=ft)
-ax2.set_xlabel("Date"); ax2.set_ylabel("Average price (cents/L)")
-ax2.legend(title="Fuel"); ax2.grid(True, alpha=0.3)
-plt.xticks(rotation=45); plt.tight_layout()
+ax2.set_xlabel("Date")
+ax2.set_ylabel("Average price (cents/L)")
+ax2.legend(title="Fuel")
+ax2.grid(True, alpha=0.3)
+plt.xticks(rotation=45)
+plt.tight_layout()
 st.pyplot(fig2)
 
-st.caption("Built by
+st.caption("Built by Ankur Bajaj | Data from NSW FuelCheck API | Python, pandas, matplotlib, Streamlit")
