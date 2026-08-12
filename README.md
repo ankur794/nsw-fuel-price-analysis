@@ -94,3 +94,21 @@ Python, pandas, NumPy, matplotlib, Streamlit, requests, cron.
 ## Next steps
 
 The current version documents the cycle, forecasts short-term with a validated baseline, and serves it all through a live dashboard. The next stage is a seasonal model (Prophet or SARIMA) that can capture the full climb-and-crash cycle, and saving station names and locations so the dashboard can map the cheapest fuel nearby.
+
+### Testing a seasonal model (Prophet)
+
+I extended the forecast with Prophet, a seasonal time-series model, expecting it to beat the linear trend by capturing the full price cycle.
+
+Evaluated honestly on held-out days the model never saw:
+
+| Model | MAE on unseen days (c/L) |
+|-------|--------------------------|
+| Naive baseline | 2.93 |
+| Linear trend | 2.45 |
+| Prophet | 8.04 |
+
+The result was the opposite of what I expected, and that's the finding worth reporting: **on ~13 days of data, Prophet overfits and performs worse than the simple linear model.** A seasonal model needs several full cycles to learn the pattern, and the dataset isn't there yet.
+
+Two things are worth noting. First, when I initially measured Prophet on its own training data it scored a misleadingly perfect 0.38 — a reminder to always evaluate on unseen data. Second, the framework is now in place, so as the dataset grows past a few full cycles, Prophet should overtake the simpler models automatically.
+
+![Model comparison](model_comparison.png)
