@@ -109,7 +109,7 @@ c3.metric("Stations tracked", f"{df['stationcode'].nunique():,}")
 c4.metric("Price records", f"{len(df):,}")
 
 # ---------- Tabs ----------
-tab1, tab2, tab3 = st.tabs(["📈 Price Cycle", "🗺️ Live Map", "🔍 Find Fuel"])
+tab1, tab2, tab3, tab4 = st.tabs(["📈 Price Cycle", "🏷️ By Brand", "🗺️ Live Map", "🔍 Find Fuel"])
 
 # ===== TAB 1: PRICE CYCLE =====
 with tab1:
@@ -160,8 +160,53 @@ with tab1:
     st.pyplot(fig2)
     st.caption("Every fuel grade traces the same climb-peak-crash cycle, pointing to a market-wide pattern rather than station-level noise.")
 
-# ===== TAB 2: LIVE MAP =====
+# ===== TAB 2: BY BRAND =====
 with tab2:
+    st.subheader(f"Which brands are cheapest for {choice}?")
+    if priced is not None and 'brand' in priced.columns:
+        brand_avg = (priced.groupby('brand')['price']
+                     .agg(['mean', 'count'])
+                     .reset_index()
+                     .rename(columns={'mean': 'avg_price', 'count': 'stations'}))
+        brand_avg = brand_avg[brand_avg['stations'] >= 3].sort_values('avg_price')
+
+        if len(brand_avg) > 0:
+            cheapest_brand = brand_avg.iloc[0]
+            priciest_brand = brand_avg.iloc[-1]
+            st.success(
+                f"Cheapest brand on average: **{cheapest_brand['brand']}** at "
+                f"**{cheapest_brand['avg_price']:.1f} c/L**  •  Priciest: "
+                f"**{priciest_brand['brand']}** at **{priciest_brand['avg_price']:.1f} c/L**  "
+                f"— a gap of **{priciest_brand['avg_price'] - cheapest_brand['avg_price']:.1f} c/L**."
+            )
+
+            top = brand_avg.head(15)
+            fig_b, ax_b = plt.subplots(figsize=(11, max(4, len(top) * 0.4)))
+            colors = plt.cm.RdYlGn_r(
+                (top['avg_price'] - top['avg_price'].min()) /
+                (top['avg_price'].max() - top['avg_price'].min() + 1e-9)
+            )
+            ax_b.barh(top['brand'], top['avg_price'], color=colors)
+            ax_b.invert_yaxis()
+            ax_b.set_xlabel("Average price (cents/L)")
+            ax_b.set_title(f"Average {choice} price by brand (cheapest at top)")
+            ax_b.grid(True, axis='x', alpha=0.3)
+            for i, v in enumerate(top['avg_price']):
+                ax_b.text(v + 0.1, i, f"{v:.1f}", va='center', fontsize=9)
+            plt.tight_layout()
+            st.pyplot(fig_b)
+
+            st.dataframe(
+                brand_avg.rename(columns={'brand': 'Brand', 'avg_price': 'Avg price (c/L)', 'stations': 'Stations'}),
+                hide_index=True, use_container_width=True)
+            st.caption("Averaged across all stations of each brand with current prices (brands with at least 3 stations shown).")
+        else:
+            st.info("Not enough brand data to compare yet.")
+    else:
+        st.info("Brand data not available yet.")
+
+# ===== TAB 3: LIVE MAP =====
+with tab3:
     st.subheader(f"{choice} prices across NSW right now")
     if priced is not None:
         try:
@@ -182,8 +227,8 @@ with tab2:
     else:
         st.info("Station location data not available yet.")
 
-# ===== TAB 3: FIND FUEL =====
-with tab3:
+# ===== TAB 4: FIND FUEL =====
+with tab4:
     st.subheader(f"Find the cheapest {choice} near you")
     if priced is not None:
         query = st.text_input("Enter your suburb or postcode (e.g. Parramatta or 2150):").strip().upper()
