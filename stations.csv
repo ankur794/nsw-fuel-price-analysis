@@ -1691,7 +1691,6 @@ stationcode,name,address,latitude,longitude,brand
 21,Shell Reddy Express Eastern Creek,"611 Great Western Hwy (Cnr Brabham Drv), Eastern Creek NSW 2766",-33.792159,150.871489,Reddy Express
 22,Shell Reddy  Express Gorokan,"67 Wallarah Rd (Cnr Edith St), Gorokan NSW 2263",-33.25654,151.507969,Reddy Express
 23,Shell Reddy  Express Lake Munmorah,"260 Pacific Hwy (Cnr Basford Road), Doyalson North NSW 2259",-33.186301,151.548878,Reddy Express
-24,Shell Reddy  Express Woy Woy,"50-52 Ocean Beach Rd (Cnr Rawson St), Woy Woy NSW 2256",-33.493905,151.320693,Reddy Express
 26,Shell Reddy Express Gilgandra,"Portion 101 Newell Highway (Cnr Tooraweenah Road), Gilgandra NSW 2827",-31.703093,148.678759,Reddy Express
 27,Shell Reddy  Express Erina,"211 The Entrance Rd (Cnr Bonnal Rd), Erina NSW 2250",-33.435578,151.385108,Reddy Express
 29,Shell Reddy Express Mittagong,"Old Hume Hwy (Cnr Balaclava St), Mittagong NSW 2575",-34.439,150.471869,Reddy Express
@@ -2893,6 +2892,7 @@ stationcode,name,address,latitude,longitude,brand
 20068,METRO PETROLEUM BALLINA,"323 RIVER ST, BALLINA NSW 2478",-28.86599301,153.55043315,Metro Fuel
 20070,OTR Boolaroo,"106 MUNIBUNG RD, BOOLAROO NSW 2284",-32.94016453,151.6362461,Shell
 20071,7-Eleven Robin Hill,"98 CORPORATION AV, ROBIN HILL NSW 2795",-33.4135903,149.54391674,7-Eleven
+20072,Spar Express Yamba,"7 WOOLI ST, YAMBA NSW 2464",-29.43679972,153.3581927,Liberty
 20074,OTR Hamilton Tudor Street,"56 TUDOR ST, HAMILTON NSW 2303",-32.92428384,151.74994789,Shell
 20075,OTR Prestons,"1-5 YATO RD, PRESTONS NSW 2170",-33.93910495,150.86854258,Shell
 20078,Metro Weston,"191 CESSNOCK RD, WESTON NSW 2326",-32.81248413,151.44384206,Metro Fuel
