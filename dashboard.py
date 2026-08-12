@@ -72,6 +72,35 @@ daily = daily.sort_values('date').reset_index(drop=True)
 first_price = daily['avg_price'].iloc[0]
 latest_price = daily['avg_price'].iloc[-1]
 peak_price = daily['avg_price'].max()
+trough_price = daily['avg_price'].min()
+
+# ---------- "Should I buy now?" indicator ----------
+if peak_price > trough_price:
+    position = (latest_price - trough_price) / (peak_price - trough_price)
+else:
+    position = 0.5
+
+recent_change = daily['avg_price'].iloc[-1] - daily['avg_price'].iloc[-2] if len(daily) > 1 else 0
+
+if position <= 0.33:
+    verdict = "🟢 GOOD TIME TO FILL UP"
+    reason = "Prices are near the bottom of the cycle."
+elif position >= 0.66:
+    verdict = "🔴 WAIT IF YOU CAN"
+    reason = "Prices are near the top of the cycle — a drop usually follows soon."
+else:
+    if recent_change > 0:
+        verdict = "🟠 PRICES RISING — FILL UP SOON"
+        reason = "Prices are mid-cycle and climbing toward the peak."
+    else:
+        verdict = "🟢 PRICES EASING — OKAY TO BUY"
+        reason = "Prices are mid-cycle and coming down."
+
+st.markdown(f"### {verdict}")
+st.caption(f"{reason}  (Current {choice}: {latest_price:.1f} c/L — cycle low {trough_price:.1f}, high {peak_price:.1f})")
+st.progress(min(max(position, 0.0), 1.0))
+
+st.divider()
 
 c1, c2, c3, c4 = st.columns(4)
 c1.metric(f"Latest avg {choice}", f"{latest_price:.1f} c/L", f"{latest_price - first_price:.1f}")
