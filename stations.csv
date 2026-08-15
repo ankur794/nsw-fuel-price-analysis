@@ -741,8 +741,9 @@ stationcode,name,address,latitude,longitude,brand
 18704,Metro petroleum Griffith West,"33 GRIFFIN AV, GRIFFITH NSW 2680",-34.2853488,146.0278681,Metro Fuel
 18705,Metro Petroleum Bellambi,"209-211 ROTHERY ST, BELLAMBI NSW 2518",-34.3683389,150.910013,Metro Fuel
 18706,Metro Greenacre,"1 DAVID ST, GREENACRE NSW 2190",-33.8964035,151.0592723,Metro Fuel
+18707,LakeMac Petroleum,"283 MAIN RD, FENNELL BAY NSW 2283",-32.9918025,151.5998424,Independent
 18709,Riordan Fuels Express Diesel,"503 COOLAC RD, COOLAC NSW 2727",-34.9223018,148.1655257,Independent
-18708,Shell Broken Hill,"1 BLENDE ST, BROKEN HILL NSW 2880",-31.96460287,141.45349069,Shell
+18708,S24 Broken Hill Blende Street,"1 BLENDE ST, BROKEN HILL NSW 2880",-31.96460287,141.45349069,Shell
 18710,METRO PETROLEUM BLACKTOWN FLUSHCOMBE,"140 FLUSHCOMBE RD, BLACKTOWN NSW 2148",-33.7775284,150.9078124,Metro Fuel
 18711,BP Nicholls,"6 GOLD CREEK RD, NICHOLLS ACT 2913",-35.1935302,149.0869347,BP
 18713,METRO PETROLEUM MITCHELL,"2 CALLAN ST, MITCHELL ACT 2911",-35.2145112,149.1433166,Metro Fuel
@@ -1691,6 +1692,7 @@ stationcode,name,address,latitude,longitude,brand
 21,Shell Reddy Express Eastern Creek,"611 Great Western Hwy (Cnr Brabham Drv), Eastern Creek NSW 2766",-33.792159,150.871489,Reddy Express
 22,Shell Reddy  Express Gorokan,"67 Wallarah Rd (Cnr Edith St), Gorokan NSW 2263",-33.25654,151.507969,Reddy Express
 23,Shell Reddy  Express Lake Munmorah,"260 Pacific Hwy (Cnr Basford Road), Doyalson North NSW 2259",-33.186301,151.548878,Reddy Express
+24,Shell Reddy  Express Woy Woy,"50-52 Ocean Beach Rd (Cnr Rawson St), Woy Woy NSW 2256",-33.493905,151.320693,Reddy Express
 26,Shell Reddy Express Gilgandra,"Portion 101 Newell Highway (Cnr Tooraweenah Road), Gilgandra NSW 2827",-31.703093,148.678759,Reddy Express
 27,Shell Reddy  Express Erina,"211 The Entrance Rd (Cnr Bonnal Rd), Erina NSW 2250",-33.435578,151.385108,Reddy Express
 29,Shell Reddy Express Mittagong,"Old Hume Hwy (Cnr Balaclava St), Mittagong NSW 2575",-34.439,150.471869,Reddy Express
@@ -2869,7 +2871,6 @@ stationcode,name,address,latitude,longitude,brand
 20041,Tambar Springs General Store,"76 TAMBAR RD, TAMBAR SPRINGS NSW 2381",-31.34602,149.82863,Independent
 20042,Caltex Village Grocer Warrawong,"42-46 KING ST, WARRAWONG NSW 2502",-34.48377135,150.88705235,Caltex
 20043,Mobil Fuel Bodalla,"122 PRINCES HWY, BODALLA NSW 2545",-36.09384903,150.05233043,Mobil
-20044,Mendooran Fuels,"33 BANDULLA ST, MENDOORAN NSW 2842",-31.82209751,149.1195207,Independent
 20045,Budget petrol,"275 BAY ST, BRIGHTON-LE-SANDS NSW 2216",-33.95991294,151.15311443,Budget
 20046,Ampol Foodary Halfway Creek,"50 KUNGALA RD, HALFWAY CREEK NSW 2460",-29.919141,153.0695303,Ampol Foodary
 20047,ARKO ENERGY GOULBURN,"33-35 LAGOON ST, GOULBURN NSW 2580",-34.74827246,149.72620169,Arko Energy
@@ -3097,6 +3098,7 @@ stationcode,name,address,latitude,longitude,brand
 20564,Astron Lismore,"16 BALLINA RD, LISMORE NSW 2480",-28.81339923,153.27593454,ASTRON
 20565,Metro Liverpool,64 ORANGE GROVE RD LIVERPOOL NSW 2170,-33.91229268,150.91959244,Metro Fuel
 20566,Pearl Energy Londonderry,"370-372 CARRINGTON RD, LONDONDERRY NSW 2753",-33.64530604,150.73609288,Pearl Energy
+20567,Ampol Broken Hill Patton St,"84 PATTON ST, BROKEN HILL NSW 2880",-31.98138674,141.45861447,Ampol
 20570,OTR Ingleburn,"58 STENNETT RD, INGLEBURN NSW 2565",-34.0042342,150.84147176,Shell
 20571,BP Charmhaven,"210 PACIFIC HWY, CHARMHAVEN NSW 2263",-33.22723159,151.50252372,BP
 20572,Mannering Park Mini Mart,"70 VALES RD, MANNERING PARK NSW 2259",-33.15236371,151.53717578,Independent
