@@ -1,80 +1,64 @@
-# NSW Fuel Price Cycle Analysis
+# NSW Fuel Price Analysis
 
-A data pipeline that tracks petrol prices across New South Wales using the government's live FuelCheck API, then digs out the pricing cycle underneath the day-to-day noise, forecasts where prices head next, and serves it all through a live interactive dashboard.
+A data project that tracks petrol prices across New South Wales using the government's live FuelCheck API, uncovers the pricing cycle behind the daily fluctuations, forecasts where prices head next, and turns the whole thing into a live web app people can actually use.
 
-**Live dashboard:** https://nsw-fuel-price-analysis.streamlit.app
+**Live app:** https://nsw-fuel-price-analysis.streamlit.app
 
-An interactive Streamlit app where you can explore the price cycle and forecast by fuel type, with live metrics and a comparison across all fuel grades.
+## Where the idea came from
 
-## Background
-
-I spent over a year working the counter at an Ampol service station. One thing you pick up fast is that fuel prices don't move randomly. They grind upward for a week or two, hit a peak, then drop hard almost overnight, and the whole thing starts over. This project was me checking whether the data actually backs up the pattern I'd been watching from behind the register.
+I work at an Ampol service station. Standing at the counter, you notice things about fuel prices that most people don't. They aren't random. They grind upward for a week or two, hit a peak, then drop hard almost overnight, and the whole thing starts again. I wanted to find out whether the data actually backed up the pattern I'd been watching from behind the register, so I built a pipeline to test it.
 
 ## What it does
 
-It collects a full snapshot of every NSW station's fuel prices on a schedule, stamps each snapshot with a time, and builds a price history over time. Once there's enough history, it cleans the data, charts the cycle across every fuel grade, forecasts the next few days, and presents everything in a live dashboard anyone can open.
+The project collects a full snapshot of every NSW station's fuel prices on a schedule and builds a price history over time. Once there's enough history, it cleans the data, charts the cycle across every fuel grade, forecasts the coming days, and presents it all through an interactive dashboard. Someone can open the app, see where prices sit in the cycle, find the cheapest fuel near them, and get a read on whether now is a good time to fill up.
 
-Collection runs on its own. A cron job calls the collector every few hours, so the dataset keeps growing without me touching it.
-
-## Data
+## The data
 
 - Source: NSW Government FuelCheck API (OAuth2)
-- Coverage: ~3,300 stations statewide, 10 fuel types
-- Window: 23 July onward (dataset keeps growing)
-- ~328,000 timestamped price records after removing duplicate pulls
+- Coverage: roughly 3,300 stations statewide, 10 fuel types
+- Records: hundreds of thousands of timestamped prices, growing as collection continues
+- Two datasets: a price history for the analysis, and a station file with names, addresses and coordinates for the maps
 
-## Findings
+Collection runs on its own. A scheduled job calls the collector every few hours, so the dataset keeps building without any manual work.
 
-Across the collection window the data showed a clean cycle: a steady climb to a peak around 5-6 August, then the start of a sharp fall.
+## What the data showed
 
-A few things stood out:
+The analysis confirmed a clear, market-wide cycle. Every fuel grade moved in step, which points to a broad market pattern rather than noise at individual stations. Regular unleaded swung around 27 cents per litre from the bottom of the cycle to the peak, and diesel moved the most. Premium grades held a roughly constant margin above regular the whole way through.
 
-- Every fuel grade moved together. E10, unleaded 91, premium 95/98 and diesel all traced the same climb-and-crash shape, which points to a market-wide cycle rather than station-level noise.
-- Regular unleaded (E10) swung about 27 c/L from trough to peak.
-- Diesel moved the most, climbing over 30 c/L.
-- Premium grades held a roughly constant margin above regular the whole way through, instead of widening or narrowing across the cycle.
+## Forecasting, tested honestly
 
-![E10 price cycle](e10_price_cycle.png)
+Describing the cycle was only half the work. I wanted to predict short-term prices and, more importantly, prove any model actually added value rather than just looking convincing on a chart. The approach was to measure every model against a naive baseline: assume tomorrow's price equals today's. Anything that can't beat that isn't worth using.
 
-![Price cycle by fuel type](price_by_fueltype.png)
+| Model | Mean error on unseen days (c/L) |
+|-------|--------------------------------|
+| Naive baseline | 2.93 |
+| Linear trend | 2.45 |
+| Prophet (seasonal) | 8.04 |
 
-## Forecasting
+The linear trend model beat the baseline. The seasonal Prophet model, tested properly on days it had never seen, did worse, and that is the finding worth reporting. On a short dataset Prophet overfits; it needs several full cycles before it can learn the pattern well enough to win. When I first measured Prophet on its own training data it scored a near-perfect 0.38, which is a reminder that a model must always be judged on data it hasn't seen. Reporting the honest 8.04 matters more than a number that only looks good.
 
-Beyond describing the cycle, I built a short-term price forecast and tested it properly rather than eyeballing it.
+The framework is in place, so as the dataset grows past a few full cycles the seasonal model should overtake the simpler ones on its own.
 
-**Method:** predict the next day's average price, then measure error against a naive baseline (tomorrow = today). Any model has to beat that baseline to be worth using.
+## The live app
 
-**Result:**
+The dashboard turns the analysis into something anyone can use. It is organised into tabs:
 
-| Model | MAE (c/L) | RMSE (c/L) |
-|-------|-----------|------------|
-| Naive baseline | 2.93 | 3.74 |
-| Linear trend | 2.45 | 2.97 |
+- **Price Cycle** — the cycle chart, the 7-day forecast, the model comparison, and a view of all fuel grades moving together
+- **By Brand** — which brands run cheapest and priciest on average, with the gap between them
+- **Live Map** — every station plotted on a dark interactive map, coloured by price, with brand, address, price and last-updated time on each point
+- **Find Fuel** — enter a suburb or postcode, or use your location, to find the cheapest fuel nearby, sorted by price and distance
 
-The trend model beats the naive baseline by roughly 16%, on a deliberately short dataset that keeps growing as collection continues.
-
-![7-day forecast](forecast.png)
-
-**Honest limitation:** a linear trend can only project prices upward, so it can't capture the crash that ends each cycle. Modelling the full cycle needs more accumulated data and a seasonal approach (e.g. Prophet or SARIMA), which is the next step as the dataset grows.
-
-## The dashboard
-
-`dashboard.py` is a Streamlit app that turns the analysis into a live tool. It shows current metrics (latest price, cycle peak, stations tracked), lets you switch between fuel types, plots the cycle and 7-day forecast, reports how the forecast compares to the naive baseline, and charts all fuel grades side by side. It's deployed free on Streamlit Community Cloud and updates automatically whenever new code is pushed.
+A "should I fill up now?" indicator sits at the top, reading where the current price sits between the cycle's low and high and giving a clear verdict.
 
 ## How it works
 
-**`collect_prices.py`**
-- Authenticates against the FuelCheck OAuth endpoint
-- Pulls current prices for every station
-- Appends each pull to `fuel_prices_history.csv` with a timestamp
+**`collect_prices.py`** authenticates against the FuelCheck OAuth endpoint, pulls current prices and station details for every station, and appends each snapshot to the price history with a timestamp. The analysis notebook loads that data, cleans it, builds the charts, and fits the forecasts. The dashboard reads the same data and presents it interactively.
 
-The analysis notebook loads that CSV, drops duplicate pulls, groups by day and fuel type, builds the charts, and fits the forecast. The dashboard reads the same data and presents it interactively.
+API credentials are kept out of the code in a local environment file that isn't committed.
 
-API credentials are kept out of the code in a local `.env` file, which isn't committed.
+## Built with
 
-## Stack
-
-Python, pandas, NumPy, matplotlib, Streamlit, requests, cron.
+Python, pandas, NumPy, matplotlib, Prophet, Streamlit, Plotly, and cron for scheduling.
 
 ## Running it yourself
 
@@ -86,29 +70,12 @@ Python, pandas, NumPy, matplotlib, Streamlit, requests, cron.
    ```
 3. Install the dependencies:
    ```
-   pip install requests pandas numpy matplotlib streamlit python-dotenv
+   pip install requests pandas numpy matplotlib prophet streamlit plotly python-dotenv
    ```
-4. Run `python3 collect_prices.py` to collect a snapshot, or schedule it with cron to build history automatically.
-5. Run `streamlit run dashboard.py` to launch the dashboard locally.
+4. Run `python collect_prices.py` to collect a snapshot, or schedule it with cron to build history automatically.
+5. Run `streamlit run dashboard.py` to launch the app locally.
 
-## Next steps
+## Where it goes next
 
-The current version documents the cycle, forecasts short-term with a validated baseline, and serves it all through a live dashboard. The next stage is a seasonal model (Prophet or SARIMA) that can capture the full climb-and-crash cycle, and saving station names and locations so the dashboard can map the cheapest fuel nearby.
-
-### Testing a seasonal model (Prophet)
-
-I extended the forecast with Prophet, a seasonal time-series model, expecting it to beat the linear trend by capturing the full price cycle.
-
-Evaluated honestly on held-out days the model never saw:
-
-| Model | MAE on unseen days (c/L) |
-|-------|--------------------------|
-| Naive baseline | 2.93 |
-| Linear trend | 2.45 |
-| Prophet | 8.04 |
-
-The result was the opposite of what I expected, and that's the finding worth reporting: **on ~13 days of data, Prophet overfits and performs worse than the simple linear model.** A seasonal model needs several full cycles to learn the pattern, and the dataset isn't there yet.
-
-Two things are worth noting. First, when I initially measured Prophet on its own training data it scored a misleadingly perfect 0.38 — a reminder to always evaluate on unseen data. Second, the framework is now in place, so as the dataset grows past a few full cycles, Prophet should overtake the simpler models automatically.
-
-![Model comparison](model_comparison.png)
+The clear next step is making the app pull live from the FuelCheck API on load, so the data stays current on its own without manual updates. Beyond that: brand logos on the map markers, and a richer seasonal model once enough full cycles have been collected.
+s
