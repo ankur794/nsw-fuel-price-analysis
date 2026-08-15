@@ -1,81 +1,106 @@
-# NSW Fuel Price Analysis
+# ⛽ NSW Fuel Price Analysis
 
-A data project that tracks petrol prices across New South Wales using the government's live FuelCheck API, uncovers the pricing cycle behind the daily fluctuations, forecasts where prices head next, and turns the whole thing into a live web app people can actually use.
+Tracking petrol price cycles across New South Wales with live government data — from raw API to a deployed app that tells you where the cheapest fuel is and whether now's a good time to fill up.
 
-**Live app:** https://nsw-fuel-price-analysis.streamlit.app
+**🔗 Live app:** https://nsw-fuel-price-analysis.streamlit.app
 
-## Where the idea came from
+![App screenshot](app_screenshot.png)
 
-I work at an Ampol service station. Standing at the counter, you notice things about fuel prices that most people don't. They aren't random. They grind upward for a week or two, hit a peak, then drop hard almost overnight, and the whole thing starts again. I wanted to find out whether the data actually backed up the pattern I'd been watching from behind the register, so I built a pipeline to test it.
+---
+
+## The idea
+
+I work at an Ampol service station. Behind the counter you start to notice that fuel prices aren't random — they climb for a week or two, hit a peak, then crash almost overnight, and the cycle repeats. I wanted to know if the data actually proved the pattern I was watching every shift. So I built a pipeline to find out.
+
+---
 
 ## What it does
 
-The project collects a full snapshot of every NSW station's fuel prices on a schedule and builds a price history over time. Once there's enough history, it cleans the data, charts the cycle across every fuel grade, forecasts the coming days, and presents it all through an interactive dashboard. Someone can open the app, see where prices sit in the cycle, find the cheapest fuel near them, and get a read on whether now is a good time to fill up.
+An automated collector pulls live prices from every NSW station on a schedule and builds a price history over time. From that data, the project:
 
-## The data
+- maps out the full price cycle and forecasts where prices head next
+- compares fuel grades and brands
+- plots every station on a live map, coloured by price
+- lets anyone find the cheapest fuel near them by suburb, postcode, or their actual location
 
-- Source: NSW Government FuelCheck API (OAuth2)
-- Coverage: roughly 3,300 stations statewide, 10 fuel types
-- Records: hundreds of thousands of timestamped prices, growing as collection continues
-- Two datasets: a price history for the analysis, and a station file with names, addresses and coordinates for the maps
+Collection runs on its own every few hours, so the dataset keeps growing on its own.
 
-Collection runs on its own. A scheduled job calls the collector every few hours, so the dataset keeps building without any manual work.
+**Data:** NSW Government FuelCheck API · ~3,300 stations · 10 fuel types · hundreds of thousands of timestamped records.
+
+---
 
 ## What the data showed
 
-The analysis confirmed a clear, market-wide cycle. Every fuel grade moved in step, which points to a broad market pattern rather than noise at individual stations. Regular unleaded swung around 27 cents per litre from the bottom of the cycle to the peak, and diesel moved the most. Premium grades held a roughly constant margin above regular the whole way through.
+The cycle is real, and it's market-wide — every fuel grade moves in step, which rules out random station-level noise.
 
-## Forecasting, tested honestly
+![Price cycle](e10_price_cycle.png)
 
-Describing the cycle was only half the work. I wanted to predict short-term prices and, more importantly, prove any model actually added value rather than just looking convincing on a chart. The approach was to measure every model against a naive baseline: assume tomorrow's price equals today's. Anything that can't beat that isn't worth using.
+Regular unleaded swings around **27 c/L** from the bottom of the cycle to the peak, diesel moves the most, and premium grades hold a steady margin above regular the whole way through.
 
-| Model | Mean error on unseen days (c/L) |
-|-------|--------------------------------|
+![All fuel grades](price_by_fueltype.png)
+
+---
+
+## Forecasting — and testing it honestly
+
+Spotting the cycle was only half of it. I wanted to forecast short-term prices and *prove* a model added value, not just trust a chart that looked right. Every model was measured against a naive baseline: assume tomorrow's price equals today's. Anything that can't beat that is useless.
+
+| Model | Error on unseen days (c/L) |
+|-------|----------------------------|
 | Naive baseline | 2.93 |
 | Linear trend | 2.45 |
 | Prophet (seasonal) | 8.04 |
 
-The linear trend model beat the baseline. The seasonal Prophet model, tested properly on days it had never seen, did worse, and that is the finding worth reporting. On a short dataset Prophet overfits; it needs several full cycles before it can learn the pattern well enough to win. When I first measured Prophet on its own training data it scored a near-perfect 0.38, which is a reminder that a model must always be judged on data it hasn't seen. Reporting the honest 8.04 matters more than a number that only looks good.
+![Model comparison](model_comparison.png)
 
-The framework is in place, so as the dataset grows past a few full cycles the seasonal model should overtake the simpler ones on its own.
+The simple linear model beat the baseline. The seasonal Prophet model, tested properly on days it had never seen, did **worse** — and that's the finding worth reporting. On a short dataset Prophet overfits; it needs several full cycles before it can learn the pattern. When I first measured Prophet on its own training data it scored a suspiciously perfect 0.38 — a reminder that a model is only ever as good as its performance on data it hasn't seen. The honest 8.04 matters more than a number that just looks good.
+
+The framework is in place, so as more full cycles accumulate the seasonal model should overtake the simpler ones on its own.
+
+---
 
 ## The live app
 
-The dashboard turns the analysis into something anyone can use. It is organised into tabs:
+The analysis is wrapped in an interactive dashboard, organised into tabs:
 
-- **Price Cycle** — the cycle chart, the 7-day forecast, the model comparison, and a view of all fuel grades moving together
-- **By Brand** — which brands run cheapest and priciest on average, with the gap between them
-- **Live Map** — every station plotted on a dark interactive map, coloured by price, with brand, address, price and last-updated time on each point
-- **Find Fuel** — enter a suburb or postcode, or use your location, to find the cheapest fuel nearby, sorted by price and distance
+- **📈 Price Cycle** — the cycle, the 7-day forecast, and the model comparison
+- **🏷️ By Brand** — which brands run cheapest and priciest, and the gap between them
+- **🗺️ Live Map** — every station on a dark interactive map, coloured by price, with brand, address, price and last-updated time on each point
+- **🔍 Find Fuel** — cheapest fuel near you by suburb, postcode, or GPS location, sorted by price and distance
 
-A "should I fill up now?" indicator sits at the top, reading where the current price sits between the cycle's low and high and giving a clear verdict.
+A **"should I fill up now?"** indicator sits up top, reading where the current price sits in the cycle and giving a straight verdict.
+
+---
 
 ## How it works
 
-**`collect_prices.py`** authenticates against the FuelCheck OAuth endpoint, pulls current prices and station details for every station, and appends each snapshot to the price history with a timestamp. The analysis notebook loads that data, cleans it, builds the charts, and fits the forecasts. The dashboard reads the same data and presents it interactively.
+`collect_prices.py` authenticates with the FuelCheck OAuth endpoint, pulls current prices and station details, and appends each snapshot to the price history with a timestamp. The notebook cleans the data, builds the charts, and fits the forecasts. The dashboard reads the same data and serves it interactively. API keys are kept out of the code in a local `.env` file.
 
-API credentials are kept out of the code in a local environment file that isn't committed.
+**Built with:** Python · pandas · NumPy · matplotlib · Prophet · Streamlit · Plotly · cron
 
-## Built with
+---
 
-Python, pandas, NumPy, matplotlib, Prophet, Streamlit, Plotly, and cron for scheduling.
+## Run it yourself
 
-## Running it yourself
-
-1. Register for a free FuelCheck API key at the [NSW API portal](https://api.nsw.gov.au).
-2. Add your key and secret to a `.env` file in the project root:
+1. Get a free FuelCheck API key at the [NSW API portal](https://api.nsw.gov.au).
+2. Add your credentials to a `.env` file:
    ```
    API_KEY=your_key
    API_SECRET=your_secret
    ```
-3. Install the dependencies:
+3. Install dependencies:
    ```
    pip install requests pandas numpy matplotlib prophet streamlit plotly python-dotenv
    ```
-4. Run `python collect_prices.py` to collect a snapshot, or schedule it with cron to build history automatically.
-5. Run `streamlit run dashboard.py` to launch the app locally.
+4. `python collect_prices.py` to collect data (or schedule it with cron).
+5. `streamlit run dashboard.py` to launch the app.
 
-## Where it goes next
+---
 
-The clear next step is making the app pull live from the FuelCheck API on load, so the data stays current on its own without manual updates. Beyond that: brand logos on the map markers, and a richer seasonal model once enough full cycles have been collected.
-s
+## Next steps
+
+Making the app pull live from the FuelCheck API on load, so the data stays current with no manual updates — then brand logos on the map markers, and a stronger seasonal model once enough cycles are collected.
+
+---
+
+*Built by Ankur Bajaj — Computer Science (Data Science) student at Deakin University, and someone who's watched these prices from behind the counter.*
