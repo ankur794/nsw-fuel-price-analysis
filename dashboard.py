@@ -34,6 +34,14 @@ def time_ago(lastupdated_str):
     except Exception:
         return "unknown"
 
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6371.0  # km
+    p1, p2 = np.radians(lat1), np.radians(lat2)
+    dp = np.radians(lat2 - lat1)
+    dl = np.radians(lon2 - lon1)
+    a = np.sin(dp / 2) ** 2 + np.cos(p1) * np.cos(p2) * np.sin(dl / 2) ** 2
+    return 2 * R * np.arcsin(np.sqrt(a))
+
 df = load_data()
 stations = load_stations()
 
@@ -231,7 +239,57 @@ with tab3:
 with tab4:
     st.subheader(f"Find the cheapest {choice} near you")
     if priced is not None:
-        query = st.text_input("Enter your suburb or postcode (e.g. Parramatta or 2150):").strip().upper()
+        # --- Option A: use my location ---
+        st.markdown("**Option A — use my location**")
+        user_lat = user_lon = None
+        try:
+            from streamlit_geolocation import streamlit_geolocation
+            loc = streamlit_geolocation()
+            if loc and loc.get("latitude") and loc.get("longitude"):
+                user_lat = loc["latitude"]
+                user_lon = loc["longitude"]
+        except Exception:
+            st.caption("Location button unavailable — use suburb search below instead.")
+
+        if user_lat and user_lon:
+            near = priced.copy()
+            near['distance_km'] = haversine(user_lat, user_lon, near['latitude'], near['longitude'])
+            near = near[near['distance_km'] <= 15].sort_values('price')
+            if len(near) > 0:
+                best = near.iloc[0]
+                st.success(f"Cheapest {choice} within 15 km: **{best['name']}** at "
+                           f"**{best['price']} c/L**, {best['distance_km']:.1f} km away — {best['address']}")
+                try:
+                    import plotly.express as px
+                    fig_near = px.scatter_map(
+                        near, lat="latitude", lon="longitude", color="price",
+                        hover_name="name",
+                        hover_data={"brand": True, "address": True, "price": True,
+                                    "distance_km": ":.1f", "updated": True,
+                                    "latitude": False, "longitude": False},
+                        color_continuous_scale="RdYlGn_r", zoom=11, height=500,
+                    )
+                    fig_near.update_traces(marker={"size": 13})
+                    fig_near.update_layout(map_style="carto-darkmatter",
+                                           map_center={"lat": user_lat, "lon": user_lon},
+                                           margin={"r": 0, "t": 0, "l": 0, "b": 0})
+                    st.plotly_chart(fig_near, use_container_width=True)
+                except Exception as e:
+                    st.info(f"Map could not be drawn: {e}")
+                st.dataframe(
+                    near[['name', 'address', 'price', 'distance_km', 'updated']].head(15).rename(
+                        columns={'name': 'Station', 'address': 'Address', 'price': 'Price (c/L)',
+                                 'distance_km': 'Distance (km)', 'updated': 'Updated'}),
+                    hide_index=True, use_container_width=True,
+                    column_config={"Distance (km)": st.column_config.NumberColumn(format="%.1f")})
+            else:
+                st.warning("No stations found within 15 km of your location.")
+
+        st.divider()
+
+        # --- Option B: search by suburb/postcode ---
+        st.markdown("**Option B — search a suburb or postcode**")
+        query = st.text_input("Suburb or postcode (e.g. Parramatta or 2150):").strip().upper()
         if query:
             area = priced[priced['address'].str.upper().str.contains(query, na=False)].copy()
             if len(area) > 0:
@@ -265,8 +323,6 @@ with tab4:
                     hide_index=True, use_container_width=True)
             else:
                 st.warning(f"No stations found matching '{query}'. Try a nearby suburb or postcode.")
-        else:
-            st.caption("Type your suburb or postcode above; the map zooms in and shows the cheapest fuel there.")
     else:
         st.info("Station location data not available yet.")
 
