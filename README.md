@@ -4,8 +4,6 @@ Tracking petrol price cycles across New South Wales with live government data �
 
 **🔗 Live app:** https://nsw-fuel-price-analysis.streamlit.app
 
-![App screenshot](app_screenshot.png)
-
 ---
 
 ## The idea
@@ -23,7 +21,7 @@ An automated collector pulls live prices from every NSW station on a schedule an
 - plots every station on a live map, coloured by price
 - lets anyone find the cheapest fuel near them by suburb, postcode, or their actual location
 
-Collection runs on its own every few hours, so the dataset keeps growing on its own.
+Collection runs on its own every few hours, so the dataset keeps growing.
 
 **Data:** NSW Government FuelCheck API · ~3,300 stations · 10 fuel types · hundreds of thousands of timestamped records.
 
@@ -74,7 +72,7 @@ A **"should I fill up now?"** indicator sits up top, reading where the current p
 
 ## How it works
 
-`collect_prices.py` authenticates with the FuelCheck OAuth endpoint, pulls current prices and station details, and appends each snapshot to the price history with a timestamp. The notebook cleans the data, builds the charts, and fits the forecasts. The dashboard reads the same data and serves it interactively. API keys are kept out of the code in a local `.env` file.
+`collect_prices.py` authenticates with the FuelCheck OAuth endpoint, pulls current prices and station details for every station, and appends each snapshot to the price history with a timestamp. The notebook cleans the data, builds the charts, and fits the forecasts. The dashboard reads the same data and serves it interactively. API keys are kept out of the code in a local `.env` file.
 
 **Built with:** Python · pandas · NumPy · matplotlib · Prophet · Streamlit · Plotly · cron
 
