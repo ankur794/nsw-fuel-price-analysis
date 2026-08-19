@@ -304,7 +304,6 @@ stationcode,name,address,latitude,longitude,brand
 17324,Jeff and rocks fuel and hardware,"38 Adam's Street, Wentworth NSW 2648",-34.107783,141.917818,BP
 17322,U-Go Raymond Terrace (Unmanned),"136-138 Adelaide St, RAYMOND TERRACE NSW 2324",-32.7650378,151.7425266,U-Go
 17323,Ampol Foodary Raymond Terrace North,"40 Richardson Rd, RAYMOND TERRACE NSW 2324",-32.7559909,151.7628529,Ampol Foodary
-17326,Metro Petroleum Morisset,"57 Dora St, MORISSET NSW 2264",-33.1073352,151.4900618,Metro Fuel
 17327,7-Eleven Morisset,"133 Dora St, MORISSET NSW 2264",-33.1117963,151.4808387,7-Eleven
 17329,Ampol Foodary Seven Hills,"38 Abbott Rd, SEVEN HILLS NSW 2147",-33.7669285,150.9548252,Ampol Foodary
 17333,BP Kiama,"180 Manning St, KIAMA NSW 2533",-34.6824441,150.8483121,BP
@@ -1805,7 +1804,6 @@ stationcode,name,address,latitude,longitude,brand
 169,Shell Reddy Express Killarney Vale,"102 - 106 Wyong Road, Killarney Vale NSW 2261",-33.367288,151.46491,Reddy Express
 170,7-Eleven Arncliffe,"28 Princes Highway, Arncliffe NSW 2205",-33.934164,151.152566,7-Eleven
 171,7-Eleven Erina,"214 The Entrance Road, Erina NSW 2250",-33.434942,151.387952,7-Eleven
-172,7-Eleven Werrington,"Lot 122 Dunheved Road, Werrington NSW 2747",-33.747045,150.742768,7-Eleven
 174,7-Eleven Corrimal,"138-146 Princes Highway, Corrimal NSW 2518",-34.369863,150.897816,7-Eleven
 175,7-Eleven Minto,"Lot 1 Ben Lomond Road, MINTO NSW 2566",-34.031754,150.850253,7-Eleven
 176,7-Eleven Blacktown,"62 Walters Road, Blacktown NSW 2148",-33.775908,150.894749,7-Eleven
@@ -2800,7 +2798,6 @@ stationcode,name,address,latitude,longitude,brand
 18809,BP Chisholm,"3 Benham St, Chisholm ACT 2905",-35.4129,149.128,BP
 18810,BP Kingston,"77 CANBERRA AV, GRIFFITH ACT 2603",-35.3200313,149.1388923,BP
 18811,BP Jamison,CNR BowCNR Bowen St and Redfern Sten St and Redfern St Macquarie ACT 2614,-35.252979361,149.073175,BP
-18812,BP Phillip,"166 MELROSE DR, PHILLIP ACT 2606",-35.3510023,149.0852887,BP
 18813,BP Watson,"110 FEDERAL HWY, WATSON ACT 2602",-35.2249852,149.1658637,BP
 18814,BP Fyshwick,"2 Ipswich Street, Fyshwick ACT 2609",-35.3298,149.163,BP
 18816,EG Ampol Belconnen,"4 LUXTON ST, BELCONNEN ACT 2617",-35.2363066,149.059066,EG Ampol
@@ -3275,4 +3272,4 @@ stationcode,name,address,latitude,longitude,brand
 20918,Mann River Caravan & Canoe Park,"4467 GWYDIR HWY, JACKADGERY NSW 2460",-29.57710694,152.55064897,Liberty
 20919,Metro North Nowra,"MOBIL NORTH NOWRA SERVICE STATION 172 ILLAROO RD, NORTH NOWRA NSW 2541",-34.85769583,150.583156,Mobil
 20922,Metro Ballina,"323 RIVER ST, BALLINA NSW 2478",-28.86599261,153.5504312,Metro Fuel
-20923,Vultra Energy Aberdare,"81 ABERDARE RD, ABERDARE NSW 2325",-32.84377888,151.37444207,Independent
+20923,Vultra Energy Aberdare,"81 ABERDARE RD, ABERDARE NSW 2325",-32.84377888,151.37444207,Vultra Energy
