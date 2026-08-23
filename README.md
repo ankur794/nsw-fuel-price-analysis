@@ -57,6 +57,23 @@ The framework is in place, so as more full cycles accumulate the seasonal model 
 
 ---
 
+## SQL analysis
+
+The same data is also queried directly in SQL, against a SQLite database (`fuel.db`) built from the collected CSVs. `analysis.sql` covers:
+
+- a join between prices and station details (name, brand, address)
+- brand-level aggregation with `GROUP BY` to rank average price by brand
+- the daily price cycle, grouped by date
+- a window function (`LAG()`) that compares each day's price to the day before, automatically flagging whether the market was rising or falling and pinpointing where the cycle turns
+
+Run it with:
+
+```
+sqlite3 fuel.db < analysis.sql
+```
+
+---
+
 ## The live app
 
 The analysis is wrapped in an interactive dashboard, organised into tabs:
@@ -72,9 +89,9 @@ A **"should I fill up now?"** indicator sits up top, reading where the current p
 
 ## How it works
 
-`collect_prices.py` authenticates with the FuelCheck OAuth endpoint, pulls current prices and station details for every station, and appends each snapshot to the price history with a timestamp. The notebook cleans the data, builds the charts, and fits the forecasts. The dashboard reads the same data and serves it interactively. API keys are kept out of the code in a local `.env` file.
+`collect_prices.py` authenticates with the FuelCheck OAuth endpoint, pulls current prices and station details for every station, and appends each snapshot to the price history with a timestamp. The notebook cleans the data, builds the charts, and fits the forecasts. `analysis.sql` runs the same kind of analysis directly against a SQLite database. The dashboard reads the collected data and serves it interactively. API keys are kept out of the code in a local `.env` file.
 
-**Built with:** Python · pandas · NumPy · matplotlib · Prophet · Streamlit · Plotly · cron
+**Built with:** Python · pandas · NumPy · matplotlib · Prophet · Streamlit · Plotly · SQL (SQLite) · cron
 
 ---
 
@@ -82,16 +99,21 @@ A **"should I fill up now?"** indicator sits up top, reading where the current p
 
 1. Get a free FuelCheck API key at the [NSW API portal](https://api.nsw.gov.au).
 2. Add your credentials to a `.env` file:
+
    ```
    API_KEY=your_key
    API_SECRET=your_secret
    ```
+
 3. Install dependencies:
+
    ```
    pip install requests pandas numpy matplotlib prophet streamlit plotly python-dotenv
    ```
+
 4. `python collect_prices.py` to collect data (or schedule it with cron).
 5. `streamlit run dashboard.py` to launch the app.
+6. `sqlite3 fuel.db < analysis.sql` to run the SQL analysis.
 
 ---
 
