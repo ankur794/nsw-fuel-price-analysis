@@ -83,7 +83,6 @@ stationcode,name,address,latitude,longitude,brand
 2360,United Bulahdelah,"9999 Pacific Hwy, BULAHDELAH NSW 2423",-32.386103,152.228612,United
 2362,Ampol Foodary Carlingford,"131 Pennant Hills Rd, CARLINGFORD NSW 2118",-33.787648,151.027913,Ampol Foodary
 2363,Metro Tuggerah,"150 Pacific Hwy, TUGGERAH NSW 2259",-33.300491,151.420879,Metro Fuel
-2364,Ampol Foodary Kellyville,"3-5 Windsor Rd, KELLYVILLE NSW 2155",-33.714327,150.960633,Ampol Foodary
 2366,Invergowrie General Store,"Invergowrie Store 171 Invergowrie Rd, INVERGOWRIE NSW 2350",-30.519704,151.528389,Independent
 2368,Ampol Foodary Rutherford,"134-138 New England Highway, RUTHERFORD NSW 2320",-32.720367,151.538027,Ampol Foodary
 2372,Metro Warners Bay,"1 Warners Bay Rd, WARNERS BAY NSW 2282",-32.981744,151.646174,Metro Fuel
@@ -216,6 +215,7 @@ stationcode,name,address,latitude,longitude,brand
 17116,Mobil Narrandera,"74 Whitton St, NARRANDERA NSW 2700",-34.7413487,146.5557829,Mobil
 17117,JONES PANELBEATING,"72 Bolaro St, DUNEDOO NSW 2844",-32.016523,149.3950546,Independent
 17119,7-Eleven Camperdown,"198 Parramatta Rd, CAMPERDOWN NSW 2050",-33.886973,151.174134,7-Eleven
+17120,7-Eleven McGraths Hill,"142 Windsor Rd, MCGRATHS HILL NSW 2756",-33.6168487,150.8341844,7-Eleven
 17121,7-Eleven Paddington,"Cnr Oxford St & Greens Rd, PADDINGTON NSW 2021",-33.883242,151.220641,7-Eleven
 17122,7-Eleven Woolooware,"192-198 The Kingsway, WOOLOOWARE NSW 2230",-34.046318,151.133545,7-Eleven
 17123,7-Eleven Dapto,"125-127 Princes Hwy, DAPTO NSW 2530",-34.4987718,150.7914054,7-Eleven
@@ -327,6 +327,7 @@ stationcode,name,address,latitude,longitude,brand
 17576,Ampol Foodary Edgeworth,"662 Main Rd, EDGEWORTH NSW 2285",-32.925586,151.627821,Ampol Foodary
 17579,BP Thurgoona,"6 Diamond Drive, THURGOONA NSW 2640",-36.044179,146.9948,BP
 17580,Pacific Fuel Solutions,"5 Canavan Dr, BERESFIELD NSW 2322",-32.8006392,151.6329248,Independent
+17581,Ampol Foodary Five Dock,"Ramsay Rd & Fairlight Street, FIVE DOCK NSW 2046",-33.870023,151.130434,Ampol Foodary
 17584,South West Fuel Cootamundra,"56 Yass Rd, COOTAMUNDRA NSW 2590",-34.6300444,148.0413526,South West
 17586,Ampol Foodary Lismore Airport,"237 Union St, SOUTH LISMORE NSW 2480",-28.8205218,153.2648001,Ampol Foodary
 17590,BP Coleambally,"12 Kingfisher Ave, COLEAMBALLY NSW 2707",-34.806483,145.8831002,BP
@@ -2170,6 +2171,7 @@ stationcode,name,address,latitude,longitude,brand
 655,Ampol Eastern Creek Diesel Stop,"Lot 1548 Roberts Rd, Eastern Creek NSW 2766",-33.815141,150.837384,Ampol
 657,Shell Reddy Express Cammeray,"477-483 Miller St & Palmer St, Cammeray NSW 2062",-33.821107,151.210613,Reddy Express
 659,EG Ampol Banksia,"314 Princes Highway (Cnr Banksia Street), Banksia NSW 2216",-33.945681,151.141696,EG Ampol
+660,EG Ampol Chatswood East,"364-366 Eastern Valley Way, Chatswood East NSW 2067",-33.786662,151.201055,EG Ampol
 661,EG Ampol Redfern,"475 Cleveland St, Redfern NSW 2016",-33.892242,151.216086,EG Ampol
 662,EG Ampol Brookvale,"756 Pittwater Rd (Cnr West St), Brookvale NSW 2100",-33.761653,151.276273,EG Ampol
 663,EG Ampol Turramurra,"1233 Pacific Highway, Turramurra NSW 2074",-33.73316,151.131317,EG Ampol
@@ -2785,7 +2787,6 @@ stationcode,name,address,latitude,longitude,brand
 18805,Ampol Foodary Nicholls,"Curran Drive Cnr O'Hanlon Pl, Nicholls ACT 2913",-35.1891,149.082,Ampol Foodary
 18806,Ampol Foodary Weston,"49 BRIERLY ST, WESTON ACT 2611",-35.340197,149.0521124,Ampol Foodary
 18807,Ampol Foodary Weston Creek,"1 Kirkpatrick St, Weston ACT 2611",-35.3219,149.057,Ampol Foodary
-18790,7-Eleven Fyshwick,"149 Canberra Ave, Fyshwick ACT 2609",-35.3251,149.154,7-Eleven
 18808,BP Braddon,"2 LONSDALE ST, BRADDON ACT 2612",-35.2758254,149.1325952,BP
 18809,BP Chisholm,"3 Benham St, Chisholm ACT 2905",-35.4129,149.128,BP
 18810,BP Kingston,"77 CANBERRA AV, GRIFFITH ACT 2603",-35.3200313,149.1388923,BP
@@ -2960,7 +2961,6 @@ stationcode,name,address,latitude,longitude,brand
 20174,ANU Site 1 School of Art,"THEATRE 3 3 REPERTORY LANE, CITY ACT 2601",-35.28156557,149.12250617,Chargefox
 20175,Marketplace Gungahlin,"30 HIBBERSON ST, GUNGAHLIN ACT 2912",-35.18547474,149.13352963,Chargefox
 20176,Metro Farrer,"SERVICE STATION 53 LAMBRIGG ST, FARRER ACT 2607",-35.37591079,149.10173885,Metro Fuel
-20177,Cardiff station,"200 MAIN RD, CARDIFF NSW 2285",-32.94102464,151.66843641,Independent
 20178,Starlite Power Petroleum,"105 WYEE RD, WYEE NSW 2259",-33.17521039,151.48073913,Independent
 20179,PEARL ENERGY WAUCHOPE,"232 HIGH ST, WAUCHOPE NSW 2446",-31.46863035,152.71623542,Pearl Energy
 20180,Liberty Brocklehurst,"4 BURRAWAY RD, BROCKLEHURST NSW 2830",-32.1809327,148.62136981,Liberty
@@ -3112,7 +3112,6 @@ stationcode,name,address,latitude,longitude,brand
 20593,Speedway GroseVale,"SHOP 3 659 GROSE VALE RD, GROSE VALE NSW 2753",-33.58225303,150.66075787,Speedway
 20594,OTR Willoughby,"616-626 WILLOUGHBY RD, WILLOUGHBY NSW 2068",-33.80591051,151.19881916,Shell
 20595,Bribbaree servo,"4006 BRIBBAREE RD, BRIBBAREE NSW 2594",-34.12097674,147.88144273,Bribbaree Servo
-20596,OTR Casula Inbound,"629 HUME HWY, CASULA NSW 2170",-33.9554916,150.89290617,Shell
 20597,Mobil Bomaderry,"33 BOLONG RD, BOMADERRY NSW 2541",-34.85601167,150.60745276,Mobil
 20598,IOR Bathurst (Self- Serve),"57 HAMPDEN PARK RD, KELSO NSW 2795",-33.42809045,149.62548407,IOR Group
 20599,IOR Beresfield (Self-Serve),"4 YILEN CL, BERESFIELD NSW 2322",-32.80942374,151.62579842,IOR Group
@@ -3237,6 +3236,7 @@ stationcode,name,address,latitude,longitude,brand
 20888,ASM Mechanical,"2-10 WELLINGTON ST, BARADINE NSW 2396",-30.95028086,149.06866715,Independent
 20889,Stuarts Point Cafe & Takeaway,"4 OCEAN AV, STUARTS POINT NSW 2441",-30.82039878,152.99348702,Liberty
 20890,Metro Petroleum Croydon,"221-229 ELIZABETH ST, CROYDON NSW 2132",-33.88279432,151.11786952,Metro Fuel
+20891,7-Eleven West Wagga Wagga,"29 PEARSON ST, WAGGA WAGGA NSW 2650",-35.11878297,147.34543281,7-Eleven
 20892,Mobil Moree,"3 BLUEBERRY RD, MOREE NSW 2400",-29.49078796,149.85025901,Mobil
 20893,METRO PETROLEUM LAVINGTON,"407 WAGGA RD, LAVINGTON NSW 2641",-36.04598023,146.94135088,Metro Fuel
 20894,Budget Ramsgate,"112-114 RAMSGATE RD, RAMSGATE NSW 2217",-33.98442359,151.14013979,Budget
