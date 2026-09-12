@@ -83,6 +83,7 @@ stationcode,name,address,latitude,longitude,brand
 2360,United Bulahdelah,"9999 Pacific Hwy, BULAHDELAH NSW 2423",-32.386103,152.228612,United
 2362,Ampol Foodary Carlingford,"131 Pennant Hills Rd, CARLINGFORD NSW 2118",-33.787648,151.027913,Ampol Foodary
 2363,Metro Tuggerah,"150 Pacific Hwy, TUGGERAH NSW 2259",-33.300491,151.420879,Metro Fuel
+2364,Ampol Foodary Kellyville,"3-5 Windsor Rd, KELLYVILLE NSW 2155",-33.714327,150.960633,Ampol Foodary
 2366,Invergowrie General Store,"Invergowrie Store 171 Invergowrie Rd, INVERGOWRIE NSW 2350",-30.519704,151.528389,Independent
 2368,Ampol Foodary Rutherford,"134-138 New England Highway, RUTHERFORD NSW 2320",-32.720367,151.538027,Ampol Foodary
 2372,Metro Warners Bay,"1 Warners Bay Rd, WARNERS BAY NSW 2282",-32.981744,151.646174,Metro Fuel
@@ -183,6 +184,7 @@ stationcode,name,address,latitude,longitude,brand
 16874,BP Riverstone,"196 Riverstone Pde, RIVERSTONE NSW 2765",-33.6648441,150.8551245,BP
 16879,Paterson Service Station,"26 King St, King Street, Paterson NSW 2421",-32.598801,151.617956,Independent
 16882,Tabourie Tuckerbox,"70 Princess Highway, LAKE TABOURIE NSW 2539",-35.434948,150.403262,Independent
+16883,Mobil Gunning,"56 Yass Street, GUNNING NSW 2581",-34.781544,149.268344,Mobil
 16884,Independent Berridale,"68 Jindabyne Rd, BERRIDALE NSW 2628",-36.3654151,148.8270027,Independent
 16887,U-Go Taren Point,"114 Taren Point Rd, TAREN POINT NSW 2229",-34.0206558,151.1218918,U-Go
 16888,Billabong Takeaway & LPO,"5 Forbes Street, YEOVAL NSW 2868",-32.7537301,148.6479241,Independent
@@ -248,7 +250,7 @@ stationcode,name,address,latitude,longitude,brand
 17164,Ampol Foodary Unanderra,"86-98 Princes Hwy, UNANDERRA NSW 2526",-34.4541917,150.8451819,Ampol Foodary
 17165,Ampol Foodary Rydalmere,"309 Victoria Rd, RYDALMERE NSW 2116",-33.8119597,151.0371167,Ampol Foodary
 17230,Ampol Foodary Albion Park Rail,"31 Princess Highway, ALBION PARK RAIL NSW 2527",-34.551625,150.788036,Ampol Foodary
-17231,Mobil,"62-64 Wamoon Ave, LEETON NSW 2705",-34.5510174,146.391217,Mobil
+17231,Ampol Leeton,"62-64 Wamoon Ave, LEETON NSW 2705",-34.5510174,146.391217,Ampol
 17232,Metro Willoughby,"599 Willoughby Rd, WILLOUGHBY NSW 2068",-33.803882,151.1997448,Metro Fuel
 17235,Medco Kanahooka,"90-94 Lakeside Dr, KANAHOOKA NSW 2530",-34.501175,150.8145749,Independent
 17236,Ampol Foodary Guildford,"636-644 Woodville Rd, OLD GUILDFORD NSW 2161",-33.8665036,150.9881451,Ampol Foodary
@@ -701,7 +703,7 @@ stationcode,name,address,latitude,longitude,brand
 18652,Enhance Camellia,"17 GRAND AV, CAMELLIA NSW 2142",-33.820505,151.0356357,Enhance
 18653,Metro Petroleum South Hurstville,"928-930 KING GEORGES RD, BLAKEHURST NSW 2221",-33.9810848,151.1084759,Metro Fuel
 18656,7-Eleven Ingleburn,"4 LANCASTER ST, INGLEBURN NSW 2565",-33.9896203,150.8667278,7-Eleven
-18657,Metro Petroleum Cooma,"42 SHARP ST, COOMA NSW 2630",-36.2329232,149.1311035,Metro Fuel
+18657,Metro Petroleum Cooma,"42 SHARP ST, COOMA NSW 2630",-36.23292322,149.13110344,Metro Fuel
 18658,Budget Petrol Telopea,"57 ADDERTON RD, TELOPEA NSW 2117",-33.7934764,151.0412676,Budget
 18659,EG Ampol Oran Park Town Centre,"6 Fordham Way, Oran Park NSW 2570",-33.9997358,150.73839,EG Ampol
 18660,7-Eleven Muswellbrook,"31-33 MAITLAND ST, MUSWELLBROOK NSW 2333",-32.2705147,150.8882563,7-Eleven
@@ -717,7 +719,6 @@ stationcode,name,address,latitude,longitude,brand
 18674,GLOUCESTER SERVICE CENTRE,"1 PARK ST, GLOUCESTER NSW 2422",-32.0051754,151.9576331,Independent
 18675,7-Eleven Medowie,"787 MEDOWIE RD, MEDOWIE NSW 2318",-32.7398864,151.867393,7-Eleven
 18679,Ampol Wilcannia Roadhouse,"79-81 WOORE ST, WILCANNIA NSW 2836",-31.5586895,143.3774621,Ampol
-18680,Metro Tura beach,"487 SAPPHIRE COAST DR, BOURNDA NSW 2548",-36.8500015,149.9215717,Metro Fuel
 18681,BP Bankstown,"126 CHAPEL RD, BANKSTOWN NSW 2200",-33.9278698,151.0298158,BP
 18682,Metro Petroleum Hunter Valley,"36 WINE COUNTRY DR, CESSNOCK NSW 2325",-32.81875853,151.35218174,Metro Fuel
 18683,"Liberty Armidale, North Hill","2 MARSH ST, ARMIDALE NSW 2350",-30.5030779,151.6729076,Liberty
@@ -734,7 +735,7 @@ stationcode,name,address,latitude,longitude,brand
 18703,METRO FUEL KILLARNEY HEIGHTS,"702-704 WARRINGAH RD, FORESTVILLE NSW 2087",-33.7617609,151.207051,Metro Fuel
 18704,Metro petroleum Griffith West,"33 GRIFFIN AV, GRIFFITH NSW 2680",-34.28534919,146.02786809,Metro Fuel
 18705,Metro Petroleum Bellambi,"209-211 ROTHERY ST, BELLAMBI NSW 2518",-34.3683389,150.910013,Metro Fuel
-18706,Metro Greenacre,"1 DAVID ST, GREENACRE NSW 2190",-33.8964035,151.0592723,Metro Fuel
+18706,Metro Greenacre,"1 DAVID ST, GREENACRE NSW 2190",-33.89640329,151.05927226,Metro Fuel
 18709,Riordan Fuels Express Diesel,"503 COOLAC RD, COOLAC NSW 2727",-34.9223018,148.1655257,Independent
 18708,S24 Broken Hill Blende Street,"1 BLENDE ST, BROKEN HILL NSW 2880",-31.96460287,141.45349069,Shell
 18710,METRO PETROLEUM BLACKTOWN FLUSHCOMBE,"140 FLUSHCOMBE RD, BLACKTOWN NSW 2148",-33.7775284,150.9078124,Metro Fuel
@@ -1671,7 +1672,6 @@ stationcode,name,address,latitude,longitude,brand
 3,Shell Reddy Express Oyster Bay,"26-28 Georges River Rd (Cnr Carvers Rd), Oyster Bay NSW 2225",-34.00934,151.07548,Reddy Express
 4,Shell Reddy Express Tamworth,"251-253 Goonoo Goonoo Rd, Tamworth NSW 2340",-31.111899,150.922823,Reddy Express
 5,Shell Reddy Express Bulli,"279-287 Princes Highway, Bulli NSW 2516",-34.336559,150.912153,Reddy Express
-6,Shell Reddy Express Mudgee,"47 Church St (Cnr Mortimer St), Mudgee NSW 2850",-32.593538,149.588282,Reddy Express
 7,Shell Reddy Express Tamworth West,"147-149 Bridge St, Tamworth West NSW 2340",-31.094987,150.911999,Reddy Express
 10,Shell Reddy Express Port Macquarie,"Cnr Gordon & Hollingsworth Sts, PORT MACQUARIE NSW 2444",-31.434366,152.904685,Reddy Express
 13,Shell Reddy Express Wyalong,"Mid Western Hwy & Nicholson Lane, Wyalong NSW 2671",-33.925413,147.256084,Reddy Express
@@ -1827,7 +1827,6 @@ stationcode,name,address,latitude,longitude,brand
 200,BP Minchinbury,"1055 Great Western Highway, Minchinbury NSW 2770",-33.781986,150.824399,BP
 201,7-Eleven Blacktown East,"56 Leabons Lane (Corner Blacktown Road), Blacktown East NSW 2148",-33.780107,150.920677,7-Eleven
 202,Shell Reddy Express Campbelltown,"27 Queen Street, Campbelltown NSW 2560",-34.060434,150.819361,Reddy Express
-203,7-Eleven Blacktown,"175 Richmond Road, Blacktown NSW 2148",-33.754839,150.891241,7-Eleven
 204,7-Eleven Blacktown,"354 Corner Flushcombe Road & Myrtle Street, Blacktown NSW 2148",-33.795417,150.904904,7-Eleven
 205,7-Eleven Blaxland,"139 Great Western Highway (Corner Layton Avenue), Blaxland NSW 2774",-33.746366,150.613486,7-Eleven
 206,7-Eleven Bligh Park,"735 George Street, Bligh Park NSW 2756",-33.637167,150.786046,7-Eleven
@@ -2609,6 +2608,7 @@ stationcode,name,address,latitude,longitude,brand
 1754,Independent Wyndham,"18/19 Monaro Street, Wyndham NSW 2550",-36.929292,149.647495,Independent
 1756,Arko Energy Freshwater,"119 Harbord Rd, Freshwater NSW 2096",-33.77247,151.279536,Arko Energy
 1757,Al Mustafa Petrol,"1/3 Haldon St, Lakemba NSW 2195",-33.917964,151.07633,Independent
+1759,Independent Casino,"169 Canterbury St, CASINO NSW 2470",-28.862723,153.046427,Independent
 1761,Ampol Greta,"2021 New England Hwy, Greta NSW 2334",-32.667237,151.374678,Ampol
 1762,BP Milton,"32-36 Princes Highway, MILTON NSW 2538",-35.313425,150.433152,BP
 1766,Pearl Energy Port Kembla,"2-4 Church Street, Port Kembla NSW 2505",-34.485609,150.903275,Pearl Energy
@@ -2695,6 +2695,7 @@ stationcode,name,address,latitude,longitude,brand
 1939,Lowes Gulgong,"6 Railway Street, Gulgong NSW 2852",-32.359485,149.546141,Lowes
 1940,Lowes Hillston,"165 Cowper Street, Hillston NSW 2675",-33.490601,145.537779,Lowes
 1941,Independent Mangoplah,"Kyeamba Street, Mangoplah NSW 2652",-35.377273,147.25443,Independent
+1943,Lowes Orange(Unmanned),"76-82 PEISLEY ST, ORANGE NSW 2800",-33.2902524,149.1027211,Lowes
 1944,Lowes Tamworth,"27-29 Gunnedah Road, Tamworth NSW 2340",-31.096477,150.905833,Lowes
 1945,Lowes Armidale,"84 Marsh Street, Armidale NSW 2350",-30.512213,151.669413,Lowes
 1946,Lowes Bellata,"Newell Highway, Bellata NSW 2397",-29.917066,149.790914,Lowes
@@ -2835,7 +2836,7 @@ stationcode,name,address,latitude,longitude,brand
 20001,Shell Roadhouse Truck Stop,"890 FREEMANS DR, FREEMANS WATERHOLE NSW 2323",-32.98534327,151.48707493,Shell
 20003,Ampol Neath,"133 CESSNOCK RD, NEATH NSW 2326",-32.82700584,151.40700978,Ampol
 20004,Brooklyn Central,"81 BROOKLYN RD, BROOKLYN NSW 2083",-33.54791214,151.2081969,Independent
-20007,PEARL ENERGY ANNANGROVE,"169 ANNANGROVE RD, ANNANGROVE NSW 2156",-33.67106767,150.9562539,Pearl Energy
+20007,PEARL ENERGY ANNANGROVE,"169 ANNANGROVE RD, ANNANGROVE NSW 2156",-33.67104963,150.95628049,Pearl Energy
 20009,Tumut Fuels,"35 WARATAH ST, TUMUT NSW 2720",-35.30122715,148.20624426,Independent
 20010,Llangothlin Service Station,"5232 NEW ENGLAND HWY, LLANGOTHLIN NSW 2365",-30.12892399,151.68500183,Independent
 20011,AMPOL YETHOLME,"SERVICE STATION 3529 GREAT WESTERN HWY, YETHOLME NSW 2795",-33.4468395,149.82907409,Ampol
@@ -2955,7 +2956,6 @@ stationcode,name,address,latitude,longitude,brand
 20168,Pearl Energy Albury,842-844 DAVID ST North Albury NSW 2640,-36.06398424,146.92528447,Pearl Energy
 20169,Liberty Narrandera,"110 AUDLEY ST, NARRANDERA NSW 2700",-34.7483,146.55068492,Liberty
 20170,IGA Blackheath,"211 GREAT WESTERN HWY, BLACKHEATH NSW 2785",-33.63755359,150.28547176,Independent
-20171,NANGUS GARAGE,"2165 NANGUS RD, NANGUS NSW 2722",-35.05414664,147.90375341,Independent
 20172,Boambee Bay Service Station & General Store,"28 SAWTELL RD, TOORMINA NSW 2452",-30.35215584,153.10029888,Independent
 20173,Enhance Dubbo,"26L YARRANDALE RD, DUBBO NSW 2830",-32.21576464,148.63249768,Enhance
 20174,ANU Site 1 School of Art,"THEATRE 3 3 REPERTORY LANE, CITY ACT 2601",-35.28156557,149.12250617,Chargefox
@@ -3112,6 +3112,7 @@ stationcode,name,address,latitude,longitude,brand
 20593,Speedway GroseVale,"SHOP 3 659 GROSE VALE RD, GROSE VALE NSW 2753",-33.58225303,150.66075787,Speedway
 20594,OTR Willoughby,"616-626 WILLOUGHBY RD, WILLOUGHBY NSW 2068",-33.80591051,151.19881916,Shell
 20595,Bribbaree servo,"4006 BRIBBAREE RD, BRIBBAREE NSW 2594",-34.12097674,147.88144273,Bribbaree Servo
+20596,OTR Casula Inbound,"629 HUME HWY, CASULA NSW 2170",-33.9554916,150.89290617,Shell
 20597,Mobil Bomaderry,"33 BOLONG RD, BOMADERRY NSW 2541",-34.85601167,150.60745276,Mobil
 20598,IOR Bathurst (Self- Serve),"57 HAMPDEN PARK RD, KELSO NSW 2795",-33.42809045,149.62548407,IOR Group
 20599,IOR Beresfield (Self-Serve),"4 YILEN CL, BERESFIELD NSW 2322",-32.80942374,151.62579842,IOR Group
@@ -3277,3 +3278,4 @@ stationcode,name,address,latitude,longitude,brand
 20931,Shell Lake Cargelligo,"108 CANADA ST, LAKE CARGELLIGO NSW 2672",-33.29304193,146.37240482,Shell
 20932,Metro Chullora,"97A HUME HWY, GREENACRE NSW 2190",-33.89199112,151.05724729,Metro Fuel
 20933,Pearl Energy Metford,"71 TURTON ST, METFORD NSW 2323",-32.76135646,151.5984085,Pearl Energy
+20934,METRO TURA BEACH,"487 SAPPHIRE COAST DR, BOURNDA NSW 2548",-36.85000188,149.92157116,Metro Fuel
