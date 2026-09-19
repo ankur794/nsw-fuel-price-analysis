@@ -239,7 +239,6 @@ stationcode,name,address,latitude,longitude,brand
 17141,7-Eleven Glendale,"397 Main Rd, CARDIFF NSW 2285",-32.9339267,151.6562059,7-Eleven
 17143,7-Eleven Yagoona,"519 Hume Hwy, YAGOONA NSW 2199",-33.9076093,151.0207726,7-Eleven
 17144,7-Eleven Tweed Heads Sth,"112 Minjungbal Dr, TWEED HEADS SOUTH NSW 2486",-28.2072162,153.5454298,7-Eleven
-17145,7-Eleven Matraville,"515 Bunnerong Rd, MATRAVILLE NSW 2036",-33.9594352,151.231759,7-Eleven
 17146,7-Eleven Five Dock,"231-235 Great North Road, Five Dock NSW 2046",-33.86491,151.130081,7-Eleven
 17147,U-Go Baulkham Hills (Unmanned),"117 Seven Hills Rd, BAULKHAM HILLS NSW 2153",-33.7613952,150.9750732,U-Go
 17148,7-Eleven Windsor,"12 Hawkesbury Valley Way, WINDSOR NSW 2756",-33.6118712,150.8122023,7-Eleven
@@ -859,7 +858,6 @@ stationcode,name,address,latitude,longitude,brand
 19154,Byron Stay,"67 Shirley St, Byron Bay NSW 2481",-28.6395098,153.6043671,Independent EV
 19155,Cabins in the Clouds,"424 Moonabung Rd, Vacy NSW 2421",-32.5423289,151.5011005,Tesla
 19156,Cabramatta Hotel,"224 Railway Pde, Cabramatta NSW 2166",-33.8966772,150.9379107,Tesla
-19157,Caddens Corner,"82a O'Connell St, Kingswood NSW 2747",-33.7695689,150.7339002,Evie Networks
 19158,Cafe Loftus,"71 National Ave, Loftus NSW 2232",-34.0424537,151.0489528,Independent EV
 19159,Caltex Macksville,"Pacific Hwy, Macksville NSW 2447",-30.7098041,152.9198314,Evie Networks
 19160,Caltex Tarcutta,"32 Sydney St, Tarcutta NSW 2652",-35.2774924,147.7358735,Evie Networks
@@ -1789,7 +1787,6 @@ stationcode,name,address,latitude,longitude,brand
 158,Shell Reddy Express St Helens Park,"Lot 201 Appin Road, St Helens Park NSW 2560",-34.111953,150.798563,Reddy Express
 160,7-Eleven Shellharbour,"Corner Shellharbour & Wattle Roads, Shellharbour NSW 2529",-34.580605,150.861141,7-Eleven
 162,7-Eleven Sutherland,"693 Old Princes Highway (Retank Reopens 23 Jun'16), Sutherland NSW 2232",-34.029795,151.058951,7-Eleven
-163,7-Eleven Penrith,"30 Henry Street, Penrith NSW 2750",-33.754088,150.704558,7-Eleven
 164,7-Eleven Narrabeen,"1234 Pittwater Road, Narrabeen NSW 2101",-33.719601,151.298272,7-Eleven
 165,7-Eleven Arndell Park,"180 Reservoir Road, Arndell Park NSW 2148",-33.796722,150.897194,7-Eleven
 166,7-Eleven Mount Druitt,"Lot 6 Luxford Road, Mount Druitt NSW 2770",-33.764921,150.82627,7-Eleven
@@ -1799,7 +1796,6 @@ stationcode,name,address,latitude,longitude,brand
 170,7-Eleven Arncliffe,"28 Princes Highway, Arncliffe NSW 2205",-33.934164,151.152566,7-Eleven
 171,7-Eleven Erina,"214 The Entrance Road, Erina NSW 2250",-33.434942,151.387952,7-Eleven
 172,7-Eleven Werrington,"Lot 122 Dunheved Road, Werrington NSW 2747",-33.747045,150.742768,7-Eleven
-174,7-Eleven Corrimal,"138-146 Princes Highway, Corrimal NSW 2518",-34.369863,150.897816,7-Eleven
 175,7-Eleven Minto,"Lot 1 Ben Lomond Road, MINTO NSW 2566",-34.031754,150.850253,7-Eleven
 176,7-Eleven Blacktown,"62 Walters Road, Blacktown NSW 2148",-33.775908,150.894749,7-Eleven
 177,7-Eleven Lisarow,"911 Pacific Highway, Lisarow NSW 2250",-33.385396,151.365375,7-Eleven
@@ -1826,9 +1822,8 @@ stationcode,name,address,latitude,longitude,brand
 199,BP Macarthur,"Cnr Campbelltown & Blaxland Roads, Campbelltown NSW 2560",-34.053178,150.823322,BP
 200,BP Minchinbury,"1055 Great Western Highway, Minchinbury NSW 2770",-33.781986,150.824399,BP
 201,7-Eleven Blacktown East,"56 Leabons Lane (Corner Blacktown Road), Blacktown East NSW 2148",-33.780107,150.920677,7-Eleven
-202,Shell Reddy Express Campbelltown,"27 Queen Street, Campbelltown NSW 2560",-34.060434,150.819361,Reddy Express
+203,7-Eleven Blacktown,"175 Richmond Road, Blacktown NSW 2148",-33.754839,150.891241,7-Eleven
 204,7-Eleven Blacktown,"354 Corner Flushcombe Road & Myrtle Street, Blacktown NSW 2148",-33.795417,150.904904,7-Eleven
-205,7-Eleven Blaxland,"139 Great Western Highway (Corner Layton Avenue), Blaxland NSW 2774",-33.746366,150.613486,7-Eleven
 206,7-Eleven Bligh Park,"735 George Street, Bligh Park NSW 2756",-33.637167,150.786046,7-Eleven
 207,7-Eleven Bonnyrigg,"140 Edensor & Bibbys Roads, Bonnyrigg NSW 2177",-33.884086,150.892033,7-Eleven
 208,7-Eleven Burwood,"Cnr Parramatta & Shaftsbury Rds, Burwood NSW 2134",-33.869406,151.108603,7-Eleven
@@ -2008,7 +2003,6 @@ stationcode,name,address,latitude,longitude,brand
 444,United Petroleum Empire Bay,"306 Empire Drive, Empire Bay NSW 2257",-33.508093,151.371826,United
 445,United Petroleum Mullaway,"2910 Pacific Highway, Mullaway NSW 2456",-30.076754,153.188681,United
 446,Shell Reddy Express Albion Park,"252 Princes Highway, Albion Park NSW 2527",-34.567663,150.802234,Reddy Express
-447,Shell Reddy Express Randwick Frenchmans,"Frenchmans Rd & Clovelly Rd, Randwick NSW 2031",-33.908364,151.247674,Reddy Express
 449,United Petroleum Woolgoolga,"58 Clarence Street, Woolgoolga NSW 2456",-30.11037,153.190835,United
 451,United Petroleum Freemans Waterhole,"971 Freemans Drive, Freemans Waterhole NSW 2323",-32.98429,151.485259,United
 453,United Glen Innes,"Corner of New England Highway & Grafton Street, Glen Innes NSW 2370",-29.727143,151.740543,United
@@ -2094,7 +2088,6 @@ stationcode,name,address,latitude,longitude,brand
 558,Shell Reddy Express Stanmore,"308-310 Parramatta Road, Stanmore NSW 2048",-33.888444,151.164376,Reddy Express
 559,EG Ampol Morisset,"125 Dora Street, Morisset NSW 2264",-33.111578,151.481614,EG Ampol
 561,EG Ampol Dapto,"83 Byamee Street, Dapto NSW 2530",-34.495174,150.796093,EG Ampol
-562,EG Ampol Moorebank,"Cnr Dredge & Stockton Avenue, Moorebank NSW 2170",-33.931329,150.948838,EG Ampol
 563,EG Ampol Shellharbour,"New Lake Entrance Road (Shellharbour City Centre), Shellharbour NSW 2529",-34.564539,150.82999,EG Ampol
 564,EG Ampol Mount Druitt,"North Parade (Mt Druitt Market Place), Mount Druitt NSW 2770",-33.768693,150.818689,EG Ampol
 565,EG Ampol Port Macquarie,"1 Bay Street, Port Macquarie NSW 2444",-31.427736,152.895785,EG Ampol
@@ -2278,7 +2271,6 @@ stationcode,name,address,latitude,longitude,brand
 1014,Caltex Kempsey South,"629 Pacific Highway, KEMPSEY SOUTH NSW 2440",-31.128501,152.828608,Caltex
 1020,Metro Fuel Young,"186 Nasmyth St, Young NSW 2594",-34.309721,148.291245,Metro Fuel
 1025,Uncle Clarries,"2 Oxley Highway, Ravenswood NSW 2824",-31.69678,147.8403,Independent
-1026,Warren Fuels Liberty,"1 Coonamble Road (Warren Fuels), Warren NSW 2824",-31.69537,147.840414,Liberty
 1030,Independent Bonny Hills,"923 Ocean Drive, Bonny Hills NSW 2445",-31.590728,152.8393,Independent
 1032,Independent Marrickville,"73-81 Marrickville Road, Marrickville NSW 2204",-33.913163,151.162094,Independent
 1036,BP Tomingley,"Newell Highway, Tomingley NSW 2869",-32.569354,148.221733,BP
@@ -2608,7 +2600,6 @@ stationcode,name,address,latitude,longitude,brand
 1754,Independent Wyndham,"18/19 Monaro Street, Wyndham NSW 2550",-36.929292,149.647495,Independent
 1756,Arko Energy Freshwater,"119 Harbord Rd, Freshwater NSW 2096",-33.77247,151.279536,Arko Energy
 1757,Al Mustafa Petrol,"1/3 Haldon St, Lakemba NSW 2195",-33.917964,151.07633,Independent
-1759,Independent Casino,"169 Canterbury St, CASINO NSW 2470",-28.862723,153.046427,Independent
 1761,Ampol Greta,"2021 New England Hwy, Greta NSW 2334",-32.667237,151.374678,Ampol
 1762,BP Milton,"32-36 Princes Highway, MILTON NSW 2538",-35.313425,150.433152,BP
 1766,Pearl Energy Port Kembla,"2-4 Church Street, Port Kembla NSW 2505",-34.485609,150.903275,Pearl Energy
@@ -2862,7 +2853,6 @@ stationcode,name,address,latitude,longitude,brand
 20041,Tambar Springs General Store,"76 TAMBAR RD, TAMBAR SPRINGS NSW 2381",-31.34602,149.82863,Independent
 20042,Caltex Village Grocer Warrawong,"42-46 KING ST, WARRAWONG NSW 2502",-34.48377135,150.88705235,Caltex
 20043,Mobil Fuel Bodalla,"122 PRINCES HWY, BODALLA NSW 2545",-36.09384903,150.05233043,Mobil
-20044,Mendooran Fuels,"33 BANDULLA ST, MENDOORAN NSW 2842",-31.82209751,149.1195207,Independent
 20045,Budget petrol,"275 BAY ST, BRIGHTON-LE-SANDS NSW 2216",-33.95991294,151.15311443,Budget
 20046,Ampol Foodary Halfway Creek,"50 KUNGALA RD, HALFWAY CREEK NSW 2460",-29.919141,153.0695303,Ampol Foodary
 20047,ARKO ENERGY GOULBURN,"33-35 LAGOON ST, GOULBURN NSW 2580",-34.74827246,149.72620169,Arko Energy
@@ -2961,6 +2951,7 @@ stationcode,name,address,latitude,longitude,brand
 20174,ANU Site 1 School of Art,"THEATRE 3 3 REPERTORY LANE, CITY ACT 2601",-35.28156557,149.12250617,Chargefox
 20175,Marketplace Gungahlin,"30 HIBBERSON ST, GUNGAHLIN ACT 2912",-35.18547474,149.13352963,Chargefox
 20176,Metro Farrer,"SERVICE STATION 53 LAMBRIGG ST, FARRER ACT 2607",-35.37591079,149.10173885,Metro Fuel
+20177,Cardiff station,"200 MAIN RD, CARDIFF NSW 2285",-32.94102464,151.66843641,Independent
 20178,Starlite Power Petroleum,"105 WYEE RD, WYEE NSW 2259",-33.17521039,151.48073913,Independent
 20179,PEARL ENERGY WAUCHOPE,"232 HIGH ST, WAUCHOPE NSW 2446",-31.46863035,152.71623542,Pearl Energy
 20180,Liberty Brocklehurst,"4 BURRAWAY RD, BROCKLEHURST NSW 2830",-32.1809327,148.62136981,Liberty
@@ -3273,9 +3264,13 @@ stationcode,name,address,latitude,longitude,brand
 20925,Enhance Albion Park Rail North,"174 PRINCES HWY, ALBION PARK RAIL NSW 2527",-34.56121942,150.79556412,Enhance
 20926,ARKO ENERGY FENNELL BAY,"283 MAIN RD, FENNELL BAY NSW 2283",-32.99180249,151.59984152,Arko Energy
 20927,Pearl Energy Orange,"68 BATHURST RD, ORANGE NSW 2800",-33.29073357,149.1094309,Pearl Energy
+20928,Liberty Lansvale West,"240 HUME HWY, LANSVALE NSW 2166",-33.89802677,150.95269408,Liberty
 20929,Metro Barham,"2-4 MOULAMEIN RD, BARHAM NSW 2732",-35.62390915,144.12896301,Metro Fuel
 20930,Shell Urbanista Smeaton Grange,"1 DUNN RD, SMEATON GRANGE NSW 2567",-34.03231261,150.75616083,Shell
 20931,Shell Lake Cargelligo,"108 CANADA ST, LAKE CARGELLIGO NSW 2672",-33.29304193,146.37240482,Shell
 20932,Metro Chullora,"97A HUME HWY, GREENACRE NSW 2190",-33.89199112,151.05724729,Metro Fuel
 20933,Pearl Energy Metford,"71 TURTON ST, METFORD NSW 2323",-32.76135646,151.5984085,Pearl Energy
 20934,METRO TURA BEACH,"487 SAPPHIRE COAST DR, BOURNDA NSW 2548",-36.85000188,149.92157116,Metro Fuel
+20936,IOR Yass,"10 INDUSTRIAL CL, YASS NSW 2582",-34.8094453,148.87945743,IOR Group
+20937,OTR Warrawong South,"75-77 KING ST, WARRAWONG NSW 2502",-34.49038132,150.88881505,Shell
+20938,Shell Willow Tree,"8589 NEW ENGLAND HWY, WILLOW TREE NSW 2339",-31.6357352,150.72260971,Shell
