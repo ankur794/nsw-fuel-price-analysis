@@ -67,7 +67,6 @@ stationcode,name,address,latitude,longitude,brand
 2319,Metro Fuel Ulladulla,"74 Princess Highway, ULLADULLA NSW 2539",-35.350742,150.475984,Metro Fuel
 2322,Ampol Foodary Werrington,"Dunheved Road, WERRINGTON NSW 2747",-33.745821,150.741051,Ampol Foodary
 2324,Shell Oberon,"1 Horace St, OBERON NSW 2787",-33.698365,149.859187,Shell
-2326,Sussex Inlet Service Station,"1 Jacobs Dr, SUSSEX INLET NSW 2540",-35.158315,150.584045,Independent
 2331,BP Penshurst,"494 Forest Rd, PENSHURST NSW 2222",-33.96333,151.090139,BP
 2336,Ampol Foodary Dural,"917-923 Old Northern Rd, DURAL NSW 2158",-33.68313,151.028749,Ampol Foodary
 2337,Ampol Foodary Cherrybrook,"67 Shepherds Dr, CHERRYBROOK NSW 2126",-33.720696,151.045165,Ampol Foodary
@@ -1787,6 +1786,7 @@ stationcode,name,address,latitude,longitude,brand
 158,Shell Reddy Express St Helens Park,"Lot 201 Appin Road, St Helens Park NSW 2560",-34.111953,150.798563,Reddy Express
 160,7-Eleven Shellharbour,"Corner Shellharbour & Wattle Roads, Shellharbour NSW 2529",-34.580605,150.861141,7-Eleven
 162,7-Eleven Sutherland,"693 Old Princes Highway (Retank Reopens 23 Jun'16), Sutherland NSW 2232",-34.029795,151.058951,7-Eleven
+163,7-Eleven Penrith,"30 Henry Street, Penrith NSW 2750",-33.754088,150.704558,7-Eleven
 164,7-Eleven Narrabeen,"1234 Pittwater Road, Narrabeen NSW 2101",-33.719601,151.298272,7-Eleven
 165,7-Eleven Arndell Park,"180 Reservoir Road, Arndell Park NSW 2148",-33.796722,150.897194,7-Eleven
 166,7-Eleven Mount Druitt,"Lot 6 Luxford Road, Mount Druitt NSW 2770",-33.764921,150.82627,7-Eleven
@@ -1796,6 +1796,7 @@ stationcode,name,address,latitude,longitude,brand
 170,7-Eleven Arncliffe,"28 Princes Highway, Arncliffe NSW 2205",-33.934164,151.152566,7-Eleven
 171,7-Eleven Erina,"214 The Entrance Road, Erina NSW 2250",-33.434942,151.387952,7-Eleven
 172,7-Eleven Werrington,"Lot 122 Dunheved Road, Werrington NSW 2747",-33.747045,150.742768,7-Eleven
+174,7-Eleven Corrimal,"138-146 Princes Highway, Corrimal NSW 2518",-34.369863,150.897816,7-Eleven
 175,7-Eleven Minto,"Lot 1 Ben Lomond Road, MINTO NSW 2566",-34.031754,150.850253,7-Eleven
 176,7-Eleven Blacktown,"62 Walters Road, Blacktown NSW 2148",-33.775908,150.894749,7-Eleven
 177,7-Eleven Lisarow,"911 Pacific Highway, Lisarow NSW 2250",-33.385396,151.365375,7-Eleven
@@ -2003,6 +2004,7 @@ stationcode,name,address,latitude,longitude,brand
 444,United Petroleum Empire Bay,"306 Empire Drive, Empire Bay NSW 2257",-33.508093,151.371826,United
 445,United Petroleum Mullaway,"2910 Pacific Highway, Mullaway NSW 2456",-30.076754,153.188681,United
 446,Shell Reddy Express Albion Park,"252 Princes Highway, Albion Park NSW 2527",-34.567663,150.802234,Reddy Express
+447,Shell Reddy Express Randwick Frenchmans,"Frenchmans Rd & Clovelly Rd, Randwick NSW 2031",-33.908364,151.247674,Reddy Express
 449,United Petroleum Woolgoolga,"58 Clarence Street, Woolgoolga NSW 2456",-30.11037,153.190835,United
 451,United Petroleum Freemans Waterhole,"971 Freemans Drive, Freemans Waterhole NSW 2323",-32.98429,151.485259,United
 453,United Glen Innes,"Corner of New England Highway & Grafton Street, Glen Innes NSW 2370",-29.727143,151.740543,United
@@ -2088,6 +2090,7 @@ stationcode,name,address,latitude,longitude,brand
 558,Shell Reddy Express Stanmore,"308-310 Parramatta Road, Stanmore NSW 2048",-33.888444,151.164376,Reddy Express
 559,EG Ampol Morisset,"125 Dora Street, Morisset NSW 2264",-33.111578,151.481614,EG Ampol
 561,EG Ampol Dapto,"83 Byamee Street, Dapto NSW 2530",-34.495174,150.796093,EG Ampol
+562,EG Ampol Moorebank,"Cnr Dredge & Stockton Avenue, Moorebank NSW 2170",-33.931329,150.948838,EG Ampol
 563,EG Ampol Shellharbour,"New Lake Entrance Road (Shellharbour City Centre), Shellharbour NSW 2529",-34.564539,150.82999,EG Ampol
 564,EG Ampol Mount Druitt,"North Parade (Mt Druitt Market Place), Mount Druitt NSW 2770",-33.768693,150.818689,EG Ampol
 565,EG Ampol Port Macquarie,"1 Bay Street, Port Macquarie NSW 2444",-31.427736,152.895785,EG Ampol
