@@ -238,6 +238,7 @@ stationcode,name,address,latitude,longitude,brand
 17141,7-Eleven Glendale,"397 Main Rd, CARDIFF NSW 2285",-32.9339267,151.6562059,7-Eleven
 17143,7-Eleven Yagoona,"519 Hume Hwy, YAGOONA NSW 2199",-33.9076093,151.0207726,7-Eleven
 17144,7-Eleven Tweed Heads Sth,"112 Minjungbal Dr, TWEED HEADS SOUTH NSW 2486",-28.2072162,153.5454298,7-Eleven
+17145,7-Eleven Matraville,"515 Bunnerong Rd, MATRAVILLE NSW 2036",-33.9594352,151.231759,7-Eleven
 17146,7-Eleven Five Dock,"231-235 Great North Road, Five Dock NSW 2046",-33.86491,151.130081,7-Eleven
 17147,U-Go Baulkham Hills (Unmanned),"117 Seven Hills Rd, BAULKHAM HILLS NSW 2153",-33.7613952,150.9750732,U-Go
 17148,7-Eleven Windsor,"12 Hawkesbury Valley Way, WINDSOR NSW 2756",-33.6118712,150.8122023,7-Eleven
@@ -296,7 +297,6 @@ stationcode,name,address,latitude,longitude,brand
 17314,Woodham Petroleum Byrock,"Mulga Creek Hotel Mitchell Hwy, BYROCK NSW 2831",-30.494869,146.320327,Woodham Petroleum
 17315,Woodham Petroleum Coonamble,"5 Hooper Dr, COONAMBLE NSW 2829",-30.9438091,148.3749204,Woodham Petroleum
 17317,7-Eleven Enmore,"22 Stanmore Street, Enmore NSW 2042",-33.898417,151.169933,7-Eleven
-17320,Werrington South,"577 Great Western Hwy, WERRINGTON NSW 2747",-33.7673928,150.7568645,7-Eleven
 17318,7-Eleven East Maitland,"35 Melbourne St, EAST MAITLAND NSW 2323",-32.7448089,151.5838575,7-Eleven
 17319,7-Eleven Long Jetty,"475 The Entrance Rd, LONG JETTY NSW 2261",-33.3632592,151.4789107,7-Eleven
 17321,Speedway Casula,"572-576 Hume Hwy, CASULA NSW 2170",-33.9508807,150.9045131,Speedway
@@ -453,7 +453,6 @@ stationcode,name,address,latitude,longitude,brand
 18195,Shell Narooma,"16 Princes Highway, NAROOMA NSW 2546",-36.2133728,150.1233081,Shell
 18198,Gilgai General Store,"9 Marsh Street, GILGAI NSW 2360",-29.853559,151.1167631,Liberty
 18197,BILPIN PETROLEUM,"2742 Bells Line of Road, BILPIN NSW 2758",-33.5069237,150.4990128,Metro Fuel
-18201,7-Eleven Greystanes,"601-605 Great Western Highway, GREYSTANES NSW 2145",-33.808609,150.9359412,7-Eleven
 18202,Metro Milperra,"144 Beaconsfield Street, MILPERRA NSW 2214",-33.9422197,150.9981621,Metro Fuel
 18204,Pearl Energy Forster,"86-88 MacIntosh Street, FORSTER NSW 2428",-32.1907933,152.5154818,Pearl Energy
 18207,Sunset Petroleum,"Shop 1 140-146 Windang Road, WINDANG NSW 2528",-34.5170031,150.8722039,Independent
@@ -558,6 +557,7 @@ stationcode,name,address,latitude,longitude,brand
 18421,Ampol Foodary Macksville,"22 COOPER ST, MACKSVILLE NSW 2447",-30.7097466,152.9198214,Ampol Foodary
 18422,Speedway Roseville,"20-22 BABBAGE RD, ROSEVILLE NSW 2069",-33.7780213,151.1945551,Speedway
 18424,Ampol Foodary Belrose,"153 Forest Way, Belrose NSW 2085",-33.734678,151.221102,Ampol Foodary
+18425,Metro Petroleum Saratoga,"13-15 VILLAGE RD, SARATOGA NSW 2251",-33.4753558,151.3532147,Metro Fuel
 18426,Hanlon Enterprises Fuel,"77 PRINCE ST, JUNEE NSW 2663",-34.8557555,147.5755659,Independent
 18428,BP Bennetts Green,"20 PACIFIC HWY, BENNETTS GREEN NSW 2290",-32.9971536,151.6849801,BP
 18431,Metro Petroleum Earlwood,"281 HOMER ST, EARLWOOD NSW 2206",-33.92638397,151.12768841,Metro Fuel
@@ -1814,7 +1814,6 @@ stationcode,name,address,latitude,longitude,brand
 189,7-Eleven Carlton,"439 Princes Highway (Corner Massey Street), Carlton NSW 2218",-33.98081,151.119076,7-Eleven
 190,7-Eleven Ashfield,"132 LIVERPOOL RD, ASHFIELD NSW 2131",-33.8905782,151.1295516,7-Eleven
 191,Shell Reddy Express Leppington,"1443 Camden Valley Way, Leppington NSW 2171",-33.966367,150.815605,Reddy Express
-192,7-Eleven Bankstown,"180 Stacey & Stanley Streets, Bankstown NSW 2200",-33.920941,151.039191,7-Eleven
 193,7-Eleven Casula,"2355 Camden Valley Way (Corner Beech Road), Casula NSW 2170",-33.957141,150.882875,7-Eleven
 194,7-Eleven Adamstown,"531 - 537 Glebe Road & Bryant Street, Adamstown NSW 2289",-32.934945,151.729634,7-Eleven
 195,7-Eleven Berkeley,"47 Nolan Street (Corner Northcliffe Road), Berkeley NSW 2506",-34.476871,150.839335,7-Eleven
@@ -1825,6 +1824,7 @@ stationcode,name,address,latitude,longitude,brand
 201,7-Eleven Blacktown East,"56 Leabons Lane (Corner Blacktown Road), Blacktown East NSW 2148",-33.780107,150.920677,7-Eleven
 203,7-Eleven Blacktown,"175 Richmond Road, Blacktown NSW 2148",-33.754839,150.891241,7-Eleven
 204,7-Eleven Blacktown,"354 Corner Flushcombe Road & Myrtle Street, Blacktown NSW 2148",-33.795417,150.904904,7-Eleven
+205,7-Eleven Blaxland,"139 Great Western Highway (Corner Layton Avenue), Blaxland NSW 2774",-33.746366,150.613486,7-Eleven
 206,7-Eleven Bligh Park,"735 George Street, Bligh Park NSW 2756",-33.637167,150.786046,7-Eleven
 207,7-Eleven Bonnyrigg,"140 Edensor & Bibbys Roads, Bonnyrigg NSW 2177",-33.884086,150.892033,7-Eleven
 208,7-Eleven Burwood,"Cnr Parramatta & Shaftsbury Rds, Burwood NSW 2134",-33.869406,151.108603,7-Eleven
@@ -2233,7 +2233,6 @@ stationcode,name,address,latitude,longitude,brand
 866,Ampol Foodary Leppington,"1370-1380 Camden Valley Hwy, LEPPINGTON NSW 2179",-33.96491,150.817738,Ampol Foodary
 868,Shell Reddy Express Rutherford,"118 New England Hwy, Rutherford NSW 2320",-32.721089,151.538981,Reddy Express
 874,Ampol Foodary Gosford West (West Bound),"30A Pacific Hwy, Gosford West NSW 2250",-33.427704,151.319141,Ampol Foodary
-876,Ampol Hexham Diesel Stop,"360 Old Maitland Rd Cnr Pacific Hwy, Hexham NSW 2322",-32.827955,151.684425,Ampol
 879,Shell Reddy  Express Raymond Terrace,"105 Pacific Hwy (Cnr Kangaroo St), Raymond Terrace NSW 2324",-32.760979,151.748708,Reddy Express
 880,Ampol Foodary Windsor South,"741 George St, Windsor South NSW 2756",-33.638526,150.785041,Ampol Foodary
 889,Ampol Foodary Luddenham,"105 WILLMINGTON RD, LUDDENHAM NSW 2745",-33.8750603,150.6888912,Ampol Foodary
@@ -3204,7 +3203,6 @@ stationcode,name,address,latitude,longitude,brand
 20859,Koorindah Fuel Station,"46 PRESIDENT WILSON WALK, TANILBA BAY NSW 2319",-32.73381036,152.00178177,Independent
 20860,Ampol Ivanhoe,"60 COLUMBUS ST, IVANHOE NSW 2878",-32.89739681,144.29907436,Ampol
 20861,Mobil Cobar,"SERVICE STATION 56-58 MARSHALL ST, COBAR NSW 2835",-31.49793336,145.83466762,Mobil
-20862,Linmac Co Pty Ltd,"211N PAKINGTON ST, WALCHA NSW 2354",-30.97564886,151.59714308,Linmac Co Pty Ltd
 20863,Woodham Petroleum Hexham,"239A OLD MAITLAND RD, HEXHAM NSW 2322",-32.82929823,151.68658535,Independent
 20864,Woodham Petroleum Hillston,"175-183 COWPER ST, HILLSTON NSW 2675",-33.49178784,145.53758675,Independent
 20866,Piney Range Roadhouse,"65 BILLABONG ST, WALBUNDRIE NSW 2642",-35.69078851,146.72123601,Independent
